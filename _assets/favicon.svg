@@ -10,9 +10,9 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="96"
-   height="96"
-   viewBox="0 0 25.4 25.4"
+   width="280.46399"
+   height="192.42584"
+   viewBox="0 0 74.206097 50.912671"
    version="1.1"
    id="svg8"
    inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
@@ -38,9 +38,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6"
-     inkscape:cx="33.668664"
-     inkscape:cy="36.782981"
+     inkscape:zoom="2.8"
+     inkscape:cx="183.51281"
+     inkscape:cy="79.50524"
      inkscape:document-units="mm"
      inkscape:current-layer="text817"
      showgrid="false"
@@ -58,7 +58,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -66,40 +66,36 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-14.565919,-80.979866)">
+     transform="translate(-6.5149358,-77.871831)">
     <g
        aria-label="A"
        transform="scale(1.0463457,0.95570709)"
        style="font-style:normal;font-weight:normal;font-size:49.72784042px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.24319601"
        id="text817">
-      <g
-         id="g2380"
-         transform="matrix(0.54870116,0,0,0.54870116,6.5352833,45.872848)">
-        <text
-           xml:space="preserve"
-           style="font-style:normal;font-weight:normal;font-size:40.91459274px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#3771c8;fill-opacity:1;stroke:#3771c8;stroke-width:1.27162158"
-           x="31.607531"
-           y="105.74406"
-           id="text2336"
-           transform="scale(0.95570709,1.0463457)"><tspan
-             sodipodi:role="line"
-             id="tspan2334"
-             x="31.607531"
-             y="105.74406"
-             style="fill:#3771c8;stroke:#3771c8;stroke-width:1.27162158">A</tspan></text>
-        <text
-           transform="scale(0.95570709,1.0463457)"
-           id="text2320"
-           y="105.74406"
-           x="14.882085"
-           style="font-style:normal;font-weight:normal;font-size:40.91459274px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#002255;fill-opacity:1;stroke:#002255;stroke-width:1.27162158"
-           xml:space="preserve"><tspan
-             style="fill:#002255;stroke:#002255;stroke-width:1.27162158"
-             y="105.74406"
-             x="14.882085"
-             id="tspan2318"
-             sodipodi:role="line">A</tspan></text>
-      </g>
+      <text
+         transform="scale(0.95570708,1.0463457)"
+         id="text2336"
+         y="127.7435"
+         x="34.414452"
+         style="font-style:normal;font-weight:normal;font-size:66.98272705px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#0dcaf0;fill-opacity:1;stroke:#0dcaf0;stroke-width:2.08181667;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="fill:#0dcaf0;fill-opacity:1;stroke:#0dcaf0;stroke-width:2.08181667;stroke-opacity:1"
+           y="127.7435"
+           x="34.414452"
+           id="tspan2334"
+           sodipodi:role="line">A</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-weight:normal;font-size:66.98272705px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#214478;fill-opacity:1;stroke:#214478;stroke-width:2.08200002;stroke-miterlimit:4;stroke-dasharray:none;opacity:1;stroke-opacity:1;"
+         x="7.0326333"
+         y="127.7435"
+         id="text2320"
+         transform="scale(0.95570708,1.0463457)"><tspan
+           sodipodi:role="line"
+           id="tspan2318"
+           x="7.0326333"
+           y="127.7435"
+           style="fill:#214478;stroke:#214478;stroke-width:2.08200002;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;">A</tspan></text>
     </g>
   </g>
 </svg>

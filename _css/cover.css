@@ -66,18 +66,11 @@ body {
  * Local adjustments
  */
 
-/* .cover-mug img {
-  width: 30%;
-  min-width: 75px;
-  max-width: 150px;
-  border-radius: 50%;
-  padding-bottom: 1.5em;
-} */
 .cover-mug img {
   width: 30%;
   min-width: 75px;
   max-width: 150px;
-  border-radius: 50%;
+  border-radius: 0%;
   padding-bottom: 1.5em;
 }
 

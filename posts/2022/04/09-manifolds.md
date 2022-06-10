@@ -1,12 +1,12 @@
 +++
 pretitle = "Manifold Jacobians"
-title = "Applying manifolds"
+title = "Deriving Lie Group manifold Jacobians"
 mintoclevel = 2
 
 descr = """
-    Using Pluto notebooks
+    Deriving Lie Group manifold Jacobians
     """
-tags = ["Pluto", "code"]
+tags = ["Pluto", "code", "Lie groups", "Manifolds"]
 notebook_html = "manifolds.html"
 +++
 
@@ -14,13 +14,4 @@ notebook_html = "manifolds.html"
 
 {{page_tags}}
 
-\toc
-
-## Overview
-
-Amro
-
 {{insert_notebook}}
-
-## Done
-

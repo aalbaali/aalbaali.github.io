@@ -2,12 +2,12 @@
 cover = true
 +++
 
-@@cover-mug ![](/assets/cover/profile.png) @@
+@@cover-mug ![](/assets/favicon.svg) @@
 
 <!-- # {{author}} -->
 
 @@cover-lead,lead
-  In a nutshell, this blog is an experiment of sharing my notes and thoughts.
+  Welcome to my blog! This blog is an experiment of sharing my notes and thoughts with the world. I hope you enjoy it!
 @@
 
 ~~~
