@@ -1,8 +1,7 @@
-"""
-This file contains helper functions and HTML functions. HTML functions are Julia functions that can
-be embedded inside HTML/md pages. For more information, refer to the Franklin.jl documentation on 
-https://franklinjl.org/syntax/utils/
-"""
+# This file contains helper functions and HTML functions. HTML functions are Julia functions that
+# can be embedded inside HTML/md pages. For more information, refer to the Franklin.jl documentation
+# on https://franklinjl.org/syntax/utils/
+
 using Dates
 
 """
