@@ -3,9 +3,10 @@ title = "All posts"
 +++
 
 @@alert,alert-secondary
-    In a nutshell, this blog is an experiment of sharing my notes and thoughts.
-
-    I enjoy reading and learning about new and old concepts, whether it's a topic in math or a bit of programming. It's quite frustrating to learn a topic only to forget it few months later. So, a while back, I decided to take more thorough notes whenever I'm learning a new topic. Though I personally find these notes useful, they are not usually shared. So I thought of sharing some of these notes on this blog.
+  The posts presented on this website are mainly related to mathematics, robotics, coding, and other related subjects.
+  As such, I opted to choose [Julia](https://julialang.org/) as the programming choice.
+  This choice allows me to use [Pluto Notebooks](https://github.com/fonsp/Pluto.jl), which allow easier flow of information and allow you to download the notebook and try it out for yourself!
+  Enjoy!
 @@
 
 @@posts-container,mx-auto,px-3,py-3 {{posts}} @@
