@@ -22,7 +22,7 @@ re = r"^(\.\/)?notebooks\/[^\/]*\.jl$";
 julia_files = filter(f -> occursin(re, f), all_files);
 
 # Build each notebook
-for file_jl in enumerate(julia_files)
+for file_jl in julia_files
     println("Building $file_jl");
     
     s = Pluto.ServerSession();                    
