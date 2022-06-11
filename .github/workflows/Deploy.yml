@@ -50,8 +50,11 @@ jobs:
                         using PlutoSliderServer;
                         export_notebook(ENV["file"]);'
           done
-          mkdir -p html;
-          mv *.html html
+        
+      - name: move-html-files
+        run: |
+          mkdir -p notebooks/html;
+          mv notebooks/*.html notebooks/html
       
       # NOTE
       #   The steps below ensure that NodeJS and Franklin are loaded then it
