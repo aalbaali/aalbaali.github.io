@@ -1,5 +1,7 @@
 [deps]
+Cascadia = "54eefc05-d75b-58de-a785-1a3403f0919f"
 Franklin = "713c75ef-9fc9-4b05-94a9-213340da978e"
+Gumbo = "708ec375-b3d6-5a57-a7ce-8257bf98657a"
 InvertedIndices = "41ab1584-1d38-5bbf-9106-f11c6c58b48f"
 IterativeSolvers = "42fd0dbc-a981-5370-80f2-aaf504508153"
 MatrixDepot = "b51810bb-c9f3-55da-ae3c-350fc1fbce05"
