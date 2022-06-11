@@ -184,8 +184,13 @@ Get a list of years inside the `posts` directory
 function get_post_years(dir = "posts")
     # List of subfiles/subdirectories AND files
     sfiles = readdir(dir)
+    
+    # Get directories only
+    directories = filter(sfile -> isdir(joinpath(dir, sfile)), sfiles)
 
-    return parse.(Int64, filter(sfile -> isdir(joinpath(dir, sfile)), sfiles))
+    # Return "numeric" directories (i.e., directories that can be parsed into a number)
+    # For example, "2022" is a numeric directory but "_2022" is not
+    return tryparse.(Int64, directories)
 end
 
 """
