@@ -14,26 +14,6 @@ jobs:
         with:
           persist-credentials: false
 
-      # Update: the following code snippet failed. It gave the following error:
-      # Error: The head commit for this pull_request event is not ahead of the base commit. Please submit an issue on this action's GitHub repo.
-
-      # Get changed files. The changed files will be used to inspect what Pluto
-      # notebooks changed so they're built to HTML. Store the files into a space separated varaible
-      - id: files
-        uses: jitterbit/get-changed-files@v1
-        env:
-          CHANGED_FILES: steps.files.outputs.all
-
-      - name: Display changed files
-        run: julia -e 'changed_files = "${{ steps.files.outputs.added_modified }}";
-                       println(typeof(changed_files));
-                       re = r"^(\.\/)?notebooks\/[^\/]*\.jl$";
-                       all_files = split(changed_files);
-                       julia_files = filter(f -> occursin(re, f), all_files);
-                       for (i, file) in enumerate(julia_files)
-                          println(string(i) * "-- " * file);
-                       end'
-
       # NOTE: Python is necessary for the pre-rendering (minification) step
       - name: Install python
         uses: actions/setup-python@v2
@@ -48,25 +28,51 @@ jobs:
         with:
           version: 1.7
 
+      # Get changed files. The changed files will be used to inspect what Pluto
+      # notebooks changed so they're built to HTML. Store the files into a space separated varaible
+      - id: files
+        uses: jitterbit/get-changed-files@v1
+        env:
+          CHANGED_FILES: steps.files.outputs.all
+
       # Build modified Pluto files and move files to the appropriate locations
       # At the moment, each file is rebuilt, so it needs to be improved.
       - name: export-pluto
         run: |
           mkdir -p notebooks/html;
-          julia -e 'import Pkg; Pkg.add("Pluto");
-                    using Pluto;
-                    # Julia files
-                    nb_dir = "notebooks";
-                    nb_files = filter(x -> contains(x, ".jl"), readdir(nb_dir));
-                    for file_jl in nb_files
-                      s = Pluto.ServerSession();                    
-                      nb = Pluto.SessionActions.open(s, joinpath(nb_dir, file_jl);
-                                                      run_async=false);
-                      html_contents = Pluto.generate_html(nb);
+          julia ${GITHUB_WORKSPACE}/.github/workflows/build_notebooks.jl ${{ steps.files.outputs.added_modified }}
+          
+        # run: |
+        #     mkdir -p notebooks/html;
+        #     julia -e 'import Pkg; Pkg.add("Pluto");
+        #               using Pluto;
 
-                      filename_html = split(file_jl, ".")[1] * ".html"
-                      write(joinpath(nb_dir, "html", filename_html), html_contents);
-                    end'
+        #               # Notebooks directory 
+        #               nb_dir = "notebooks";
+
+        #               # Match Julia files stored strictly under `notebooks/` directory. It ignores
+        #               # any subdirectory under notebooks
+        #               re = r"^(\.\/)?notebooks\/[^\/]*\.jl$";
+
+        #               # Get changed or modified files. It's a single string separated by space..
+        #               changed_files = "${{ steps.files.outputs.added_modified }}";
+        #               all_files = split(changed_files);
+
+        #               # Get Julia files stored strictly under `notebooks/` directory
+        #               julia_files = filter(f -> occursin(re, f), all_files);
+
+        #               # Build each notebook
+        #               for file_jl in enumerate(julia_files)
+        #                   println("Building $file");
+                          
+        #                   s = Pluto.ServerSession();                    
+        #                   nb = Pluto.SessionActions.open(s, file_jl; run_async=false);
+        #                   html_contents = Pluto.generate_html(nb);
+
+        #                   filename_html = splitext(splitdir(file_jl)[end])[1] * ".html";
+        #                   fullfile_html = joinpath(nb_dir, "html", filename_html);
+        #                   write(fullfile_html, html_contents);
+        #               end'
         
       # NOTE
       #   The steps below ensure that NodeJS and Franklin are loaded then it
