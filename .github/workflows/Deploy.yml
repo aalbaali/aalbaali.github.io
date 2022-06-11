@@ -35,10 +35,11 @@ jobs:
       # Update: the following code snippet failed. It gave the following error:
       # Error: The head commit for this pull_request event is not ahead of the base commit. Please submit an issue on this action's GitHub repo.
 
-      # # Get changed files. The changed files will be used to inspect what Pluto
-      # # notebooks changed so they're built to HTML. Store the files into a space separated varaible
-      # - id: files
-      #   uses: jitterbit/get-changed-files@v1
+      # Get changed files. The changed files will be used to inspect what Pluto
+      # notebooks changed so they're built to HTML. Store the files into a space separated varaible
+      - id: files
+        uses: jitterbit/get-changed-files@v1
+        run: ls {{ steps.files.outputs.all }}
       
       
       # Build modified Pluto files and move files to the appropriate locations
