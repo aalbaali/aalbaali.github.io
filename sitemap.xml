@@ -38,6 +38,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>notebooks/html/extract_html_elements/</loc>
+    <lastmod>2022-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>notebooks/html/manifold_jacobians/</loc>
     <lastmod>2022-06-11</lastmod>
     <changefreq>monthly</changefreq>
