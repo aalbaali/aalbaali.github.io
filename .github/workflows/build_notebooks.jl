@@ -23,7 +23,7 @@ julia_files = filter(f -> occursin(re, f), all_files);
 
 # Build each notebook
 for file_jl in enumerate(julia_files)
-    println("Building $file");
+    println("Building $file_jl");
     
     s = Pluto.ServerSession();                    
     nb = Pluto.SessionActions.open(s, file_jl; run_async=false);
