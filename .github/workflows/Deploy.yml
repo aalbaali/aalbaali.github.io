@@ -29,8 +29,12 @@ jobs:
           CHANGED_FILES: steps.files.outputs.all
 
       - name: Display changed files
-        run: julia -e 'changed_files = "${{ steps.files.outputs.all }}";
-                       for (i, file) in enumerate(split(changed_files))
+        run: julia -e 'changed_files = "${{ steps.files.outputs.added_modified }}";
+                       println(typeof(changed_files));
+                       re = r"^(\.\/)?notebooks\/[^\/]*\.jl$";
+                       all_files = split(changed_files);
+                       julia_files = filter(f -> occursin(re, f), all_files);
+                       for (i, file) in enumerate(julia_files)
                           println(string(i) * "-- " * file);
                        end'
 
