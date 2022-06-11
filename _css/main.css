@@ -147,17 +147,12 @@ pluto-editor {
   margin: 0;
   padding: 0 0 0 0;
   border: 0 0 0 0;
-  /* align-self: center; */
-  /* width: 1500px; */
-  /* background: blue; */
-  /* position: relative; */
 }
 
 
 pluto-editor main {
   padding: 0;
   margin: 0;
-  /* position: relative; */
 }
 
 pluto-editor main preamble {
@@ -169,26 +164,11 @@ pluto-editor main preamble {
 
 pluto-editor main pluto-notebook {
   align-items: center;
-  /* background: green; */
-  /* position: absolute; */
-  /* width: 100vw; */
-  /* position: relative; */
 }
 
 pluto-editor footer {
   display: none !important
 }
-
-/* Removed margin over Pluto cells, which might not be a good thing! Remove */
-/* pluto-editor main pluto-notebook pluto-cell {
-  margin: 0;
-} */
-
-/* Pluto text styling */
-/* .raw-html-wrapper {
-  background: red;
-  align-items: center;
-} */
 
 .posts-container {
   max-width: 760px;
@@ -459,18 +439,6 @@ body > main {
   }
 }
 
-/* Pluto help (header) */
-/* .explain_binder { */
-/* :launch_binder { */
-
-/* Pluto "help" button on the top right */
-/* #binder_launch_help {
-  background:rgb(25, 179, 51);
-  color:rgba(255, 255, 255, 0.85);
-  border: 3px solid hsl(236deg 86% 49% / 70%);
-  height: 10px;
-}
-*/
 #binder_launch_help:hover {
   text-decoration: none;
   font-weight: 600;

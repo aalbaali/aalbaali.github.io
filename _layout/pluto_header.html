@@ -1,0 +1,55 @@
+<meta name="viewport" content="width=device-width" />
+  <meta charset="utf-8" />
+  <script>
+    console.log(
+      "Pluto.jl, by Fons van der Plas (https://github.com/fonsp), Mikołaj Bochenski (https://github.com/malyvsen), Michiel Dral (https://github.com/dralletje) and friends 🌈"
+    )
+  </script>
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="white">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#2a2928">
+  <meta name="color-scheme" content="light dark">
+
+  <link rel="icon" type="image/png" sizes="16x16"
+    href="/css/pluto/img/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="/css/pluto/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="96x96"
+    href="/css/pluto/img/favicon-96x96.png" />
+  <link rel="pluto-logo-big" href="/css/pluto/img/logo.svg" />
+  <link rel="pluto-logo-small"
+    href="/css/pluto/img/favicon_unsaturated.svg" />
+
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.20/lodash.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@observablehq/stdlib@3.3.1/dist/stdlib.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.2.11/js/iframeResizer.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/ansi_up@5.0.1/ansi_up.min.js" defer></script>
+
+  <!-- This doesn't do anything unless activated, and it makes sure parcel bundles this -->
+  <script id="iframe-resizer-content-window-script"
+    src="https://cdn.jsdelivr.net/npm/iframe-resizer@4.2.11/js/iframeResizer.contentWindow.min.js"
+    crossorigin="anonymous" defer></script>
+
+  <!-- <link rel="stylesheet" href="/css/pluto/editor.css" type="text/css" /> -->
+  <link rel="stylesheet" href="/css/pluto/editor.css" type="text/css" />
+  <link rel="stylesheet" href="/css/pluto/hide-ui.css" type="text/css"
+    media="all" data-pluto-file="hide-ui" />
+  <link rel="stylesheet" href="/css/pluto/binder.css" type="text/css" />
+  <link rel="stylesheet" href="/css/pluto/treeview.css"
+    type="text/css" />
+  <link rel="preload" href="/css/pluto/juliamono.css" as="style" />
+  <link rel="preload" href="/css/pluto/vollkorn.css" as="style" />
+  <link rel="stylesheet" href="/css/pluto/highlightjs.css"
+    type="text/css">
+
+  <!-- Grab the launch param, which are the core of the Pluto notebook -->
+  {{grab_pluto_launch_params}}
+  
+  <!-- [automatically generated launch parameters can be inserted here] -->
+
+  <script src="/css/pluto/editor.js" type="module" defer></script>
+  <!-- <script src="/css/pluto/editor.js" type="module" defer></script> -->
+  <script src="/css/pluto/warn_old_browsers.js"></script>
+
+  <!-- This script will be enabled by JS after the notebook has initialized to prevent taking up bandwidth during the initial load. -->
+  <script type="text/javascript" id="MathJax-script"
+    not-the-src-yet="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg-full.js" async></script>

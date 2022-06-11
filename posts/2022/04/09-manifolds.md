@@ -7,10 +7,10 @@ descr = """
     Deriving Lie Group manifold Jacobians
     """
 tags = ["Pluto", "code", "Lie groups", "Manifolds"]
-notebook_html = "manifolds.html"
+notebook_html = "manifold_jacobians.html"
 +++
 
-# {{pretitle}} (part II)
+# {{pretitle}}
 
 {{page_tags}}
 
