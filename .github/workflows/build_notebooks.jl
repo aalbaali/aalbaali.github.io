@@ -1,5 +1,7 @@
 # This script is used to build *modified* Julia/Pluto notebooks stored under the `notebooks`
 # directory and export them to HTML files stored under `notebooks/html`.
+#
+# To build all notebooks, pass "build-all" as the first argument
 
 import Pkg;
 Pkg.add("Pluto");
@@ -15,6 +17,10 @@ nb_dir = "notebooks";
 
 # The files are passed as arguments
 all_files = ARGS;
+
+if length(ARGS) > 0 && ARGS[1] == "build-all"
+    all_files = readdir(nb_dir; join=true);
+end
 
 # Match Julia files stored strictly under `notebooks/` directory. It ignores
 # any subdirectory under notebooks
