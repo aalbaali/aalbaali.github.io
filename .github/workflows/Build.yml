@@ -41,38 +41,7 @@ jobs:
         run: |
           mkdir -p notebooks/html;
           julia ${GITHUB_WORKSPACE}/.github/workflows/build_notebooks.jl ${{ steps.files.outputs.added_modified }}
-          
-        # run: |
-        #     mkdir -p notebooks/html;
-        #     julia -e 'import Pkg; Pkg.add("Pluto");
-        #               using Pluto;
-
-        #               # Notebooks directory 
-        #               nb_dir = "notebooks";
-
-        #               # Match Julia files stored strictly under `notebooks/` directory. It ignores
-        #               # any subdirectory under notebooks
-        #               re = r"^(\.\/)?notebooks\/[^\/]*\.jl$";
-
-        #               # Get changed or modified files. It's a single string separated by space..
-        #               changed_files = "${{ steps.files.outputs.added_modified }}";
-        #               all_files = split(changed_files);
-
-        #               # Get Julia files stored strictly under `notebooks/` directory
-        #               julia_files = filter(f -> occursin(re, f), all_files);
-
-        #               # Build each notebook
-        #               for file_jl in enumerate(julia_files)
-        #                   println("Building $file");
-                          
-        #                   s = Pluto.ServerSession();                    
-        #                   nb = Pluto.SessionActions.open(s, file_jl; run_async=false);
-        #                   html_contents = Pluto.generate_html(nb);
-
-        #                   filename_html = splitext(splitdir(file_jl)[end])[1] * ".html";
-        #                   fullfile_html = joinpath(nb_dir, "html", filename_html);
-        #                   write(fullfile_html, html_contents);
-        #               end'
+        
         
       # NOTE
       #   The steps below ensure that NodeJS and Franklin are loaded then it

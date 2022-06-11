@@ -10,18 +10,11 @@ for (i, arg) in enumerate(ARGS)
     println("$i: " * arg);
 end
 
-# Requires passing the files as an argument
-if length(ARGS) < 1
-    @error "Should pass the modified/changed files as a space-seperated string command line argument"
-    return
-end
-
 # Notebooks directory 
 nb_dir = "notebooks";
 
-# The files are passed as space-separated string arguments
-files_str = ARGS[1];
-all_files = split(files_str);
+# The files are passed as arguments
+all_files = ARGS;
 
 # Match Julia files stored strictly under `notebooks/` directory. It ignores
 # any subdirectory under notebooks

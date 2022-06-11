@@ -5,3 +5,5 @@ package-lock.json
 Manifest.toml
 
 notebooks/html/**
+
+bin/**
