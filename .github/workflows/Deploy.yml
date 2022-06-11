@@ -45,12 +45,21 @@ jobs:
       # At the moment, each file is rebuilt, so it needs to be improved.
       - name: export-pluto
         run: |
-          for f in notebooks/*.jl; do
-              export file=$f;
-              julia -e 'import Pkg; Pkg.add("PlutoSliderServer");
-                        using PlutoSliderServer;
-                        export_notebook(ENV["file"]);'
-          done
+          mkdir -p notebooks/html;
+          julia -e 'import Pkg; Pkg.add("Pluto");
+                    using Pluto;
+                    # Julia files
+                    nb_dir = "notebooks";
+                    nb_files = filter(x -> contains(x, ".jl"), readdir(nb_dir));
+                    for file_jl in nb_files
+                      s = Pluto.ServerSession();                    
+                      nb = Pluto.SessionActions.open(s, joinpath(nb_dir, file_jl);
+                                                      run_async=false);
+                      html_contents = Pluto.generate_html(nb);
+
+                      filename_html = split(file_jl, ".")[1] * ".html"
+                      write(joinpath(nb_dir, "html", filename_html), html_contents);
+                    end'
         
       - name: move-html-files
         run: |
