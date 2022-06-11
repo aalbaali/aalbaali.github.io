@@ -39,6 +39,8 @@ jobs:
       # notebooks changed so they're built to HTML. Store the files into a space separated varaible
       - id: files
         uses: jitterbit/get-changed-files@v1
+
+      - name: Display changed files
         run: ls {{ steps.files.outputs.all }}
       
       
