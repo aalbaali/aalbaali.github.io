@@ -12,9 +12,54 @@ jobs:
         uses: actions/checkout@v3
         with:
           persist-credentials: false
-          
-      - name: build
-        uses: ./.github/workflows/Build
+
+      # NOTE: Python is necessary for the pre-rendering (minification) step
+      - name: Install python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+
+      # NOTE: Here you can install dependencies such as matplotlib if you use
+      # packages such as PyPlot.
+      - run: pip install matplotlib
+      - name: Install Julia
+        uses: julia-actions/setup-julia@v1
+        with:
+          version: 1.7
+
+      # Get changed files. The changed files will be used to inspect what Pluto
+      # notebooks changed so they're built to HTML. Store the files into a space separated varaible
+      - id: files
+        uses: jitterbit/get-changed-files@v1
+        env:
+          CHANGED_FILES: steps.files.outputs.all
+
+      # Build modified Pluto files and move files to the appropriate locations
+      # At the moment, each file is rebuilt, so it needs to be improved.
+      - name: export-pluto
+        run: |
+          mkdir -p notebooks/html;
+          julia ${GITHUB_WORKSPACE}/.github/workflows/build_notebooks.jl ${{ steps.files.outputs.added_modified }}
+        
+        
+      # NOTE
+      #   The steps below ensure that NodeJS and Franklin are loaded then it
+      #   installs highlight.js which is needed for the prerendering step
+      #   (code highlighting + katex prerendering).
+      #   Then the environment is activated and instantiated to install all
+      #   Julia packages which may be required to successfully build your site.
+      #   The last line should be `optimize()` though you may want to give it
+      #   specific arguments, see the documentation or ?optimize in the REPL.
+      - run: julia -e '
+          using Pkg; Pkg.activate("."); Pkg.instantiate();
+          using NodeJS; run(`$(npm_cmd()) install highlight.js purgecss`);
+          Pkg.add(Pkg.PackageSpec(name="Franklin", rev="master"));
+          using Franklin;
+          optimize();
+          io = IOBuffer();
+          run(pipeline(`$(NodeJS.npm_cmd()) root`, stdout=io));
+          nodepath = String(take!(io));
+          run(`bash -c "$(strip(nodepath))/purgecss/bin/purgecss.js --css __site/css/bootstrap.min.css --content __site/index.html __site/about/*.html __site/tags/*.html __site/posts/**/*.html  --output __site/css/bootstrap.min.css"`);'
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
