@@ -18,6 +18,17 @@ jobs:
         with:
           persist-credentials: false
 
+      # Update: the following code snippet failed. It gave the following error:
+      # Error: The head commit for this pull_request event is not ahead of the base commit. Please submit an issue on this action's GitHub repo.
+
+      # Get changed files. The changed files will be used to inspect what Pluto
+      # notebooks changed so they're built to HTML. Store the files into a space separated varaible
+      - id: files
+        uses: jitterbit/get-changed-files@v1
+
+      - name: Display changed files
+        run: echo ${{ steps.files.outputs.all }}
+
       # NOTE: Python is necessary for the pre-rendering (minification) step
       - name: Install python
         uses: actions/setup-python@v2
@@ -32,18 +43,6 @@ jobs:
         with:
           version: 1.7
 
-      # Update: the following code snippet failed. It gave the following error:
-      # Error: The head commit for this pull_request event is not ahead of the base commit. Please submit an issue on this action's GitHub repo.
-
-      # Get changed files. The changed files will be used to inspect what Pluto
-      # notebooks changed so they're built to HTML. Store the files into a space separated varaible
-      - id: files
-        uses: jitterbit/get-changed-files@v1
-
-      - name: Display changed files
-        run: ls {{ steps.files.outputs.all }}
-      
-      
       # Build modified Pluto files and move files to the appropriate locations
       # At the moment, each file is rebuilt, so it needs to be improved.
       - name: export-pluto
