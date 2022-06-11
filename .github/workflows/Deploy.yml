@@ -31,7 +31,7 @@ jobs:
       - name: Display changed files
         run: julia -e 'changed_files = ENV["CHANGED_FILES"];
                        for (i, file) in enumerate(split(changed_files))
-                          println("$$i: " * file);
+                          println(string(i) * "-- " * file);
                        end'
 
       # NOTE: Python is necessary for the pre-rendering (minification) step
