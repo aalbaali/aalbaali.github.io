@@ -42,6 +42,7 @@ jobs:
       
       
       # Build modified Pluto files and move files to the appropriate locations
+      # At the moment, each file is rebuilt, so it needs to be improved.
       - name: export-pluto
         run: |
           for f in notebooks/*.jl; do
