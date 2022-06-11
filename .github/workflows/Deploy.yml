@@ -25,9 +25,14 @@ jobs:
       # notebooks changed so they're built to HTML. Store the files into a space separated varaible
       - id: files
         uses: jitterbit/get-changed-files@v1
+        env:
+          CHANGED_FILES: steps.files.outputs.all
 
       - name: Display changed files
-        run: echo ${{ steps.files.outputs.all }}
+        run: julia -e 'changed_files = ENV["CHANGED_FILES"];
+                       for (i, file) in enumerate(split(changed_files))
+                          println("$$i: " * file);
+                       end'
 
       # NOTE: Python is necessary for the pre-rendering (minification) step
       - name: Install python
