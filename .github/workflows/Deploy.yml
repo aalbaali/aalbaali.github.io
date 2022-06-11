@@ -54,6 +54,8 @@ jobs:
         
       - name: move-html-files
         run: |
+          ls .;
+          ls -lFa notebooks;
           mkdir -p notebooks/html;
           mv notebooks/*.html notebooks/html
       
