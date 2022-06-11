@@ -61,13 +61,6 @@ jobs:
                       write(joinpath(nb_dir, "html", filename_html), html_contents);
                     end'
         
-      - name: move-html-files
-        run: |
-          ls .;
-          ls -lFa notebooks;
-          mkdir -p notebooks/html;
-          mv notebooks/*.html notebooks/html
-      
       # NOTE
       #   The steps below ensure that NodeJS and Franklin are loaded then it
       #   installs highlight.js which is needed for the prerendering step
