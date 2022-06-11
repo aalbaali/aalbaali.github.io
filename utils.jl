@@ -3,6 +3,42 @@
 # on https://franklinjl.org/syntax/utils/
 
 using Dates
+using Gumbo
+using Cascadia
+
+
+"""
+Grab the <script ... "launch-params"> tag from the Pluto HTML file
+"""
+function grab_pluto_launch_params(html_file, attribute = "data-pluto-file")::String
+	content = join(readlines(html_file), "\n");
+
+	# Parse HTML contents
+	parsed_html = parsehtml(content);
+
+	# Set selector. Using `[foo]` tries to find HTML elements with `foo` selector (e.g., <div class="nice" foo=25>)
+	s = Selector("[data-pluto-file]");
+
+	# Get the elements of the selector
+	matches = eachmatch(s, parsed_html.root);
+
+	# Find all <script> nodes (usually it's a single element)
+	script_nodes = filter(m -> tag(m) == :script, matches);
+
+	script_node = nothing
+	for elem in script_nodes
+		if attribute in keys(elem.attributes)			
+			script_node = elem;			
+			break;		
+		end
+	end
+
+	# Get the contents of <script> by using a String buffer
+	ss = IOBuffer();
+	prettyprint(ss, script_node);
+	
+	return String(take!(ss));	
+end
 
 """
 Get content of a unique HTML tag from lines of HTML file
@@ -120,6 +156,16 @@ function hfun_notebook_content(args)
     return contents
 end
 
+"""
+Extract the launch-params from the <script> tag inside the Pluto (HTML) notebook
+"""
+function hfun_grab_pluto_launch_params(args = nothing)
+    pluto_dir = locvar("notebooks_html_dir")
+    notebook = locvar("notebook_html")
+    fullpath = joinpath(pluto_dir, notebook)
+
+    return grab_pluto_launch_params(fullpath);
+end
 
 """
 HTML function used for debugging
