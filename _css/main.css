@@ -2,13 +2,33 @@
 @import url("/css/pluto/dark_color.css");
 @import url("/css/pluto/light_color.css");
 
-:root {
-  /* Link decorations */
-  --a-text-decoration: underline;
+@media (prefers-color-scheme: light) {
+  :root {
+    /* Link decorations */
+    --a-text-decoration: underline;
 
-  /* Header link decorations */
-  --h-a-text-decoration: none;
-  --h-a-color: inherit;
+    /* Header link decorations */
+    --h-a-text-decoration: none;
+    --h-a-color: inherit;
+    --h-hover-a-color: darkgray;
+
+    --short-title-color: #002147;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Link decorations */
+    --a-text-decoration: underline;
+
+    /* Header link decorations */
+    --h-a-text-decoration: none;
+    --h-a-color: inherit;
+    /* While hovering */
+    --h-hover-a-color: rgba(255, 255, 255, 0.4);
+
+    --short-title-color: rgba(255, 255, 255, 0.4);
+  }
 }
 
 main {
@@ -27,6 +47,13 @@ body {
 }
 
 
+/* Pluto table of contents */
+@media (max-width: 767px) {
+  .plutoui-toc {
+    display: none;
+  }
+}
+
 main>.container {
   padding: 60px 15px 0;
 }
@@ -38,12 +65,13 @@ main a {
 
 /* To hover over links */
 main a:hover {
-  color: var(--bs-info);;
+  color: var(--bs-gray-dark);
+  ;
 }
 
 @media (prefers-color-scheme: dark) {
   main a:hover {
-    color: rgb(51, 171, 249);
+    color: rgba(255, 255, 255, 0.4);
   }
 }
 
@@ -57,6 +85,7 @@ main a:hover {
     color: darkgray;
   }
 }
+
 /*  NAVIGATION  */
 
 /* Page title in navigation area */
@@ -162,6 +191,15 @@ h5 a,
 h6 a {
   text-decoration: var(--h-a-text-decoration);
   color: var(--h-a-color);
+}
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover {
+  text-decoration: var(--h-a-text-decoration);
+  color: var(--h-hover-a-color);
 }
 
 h1,
@@ -390,10 +428,12 @@ header nav {
 .hljs-literal {
   color: darkblue;
 }
+
 .hljs-string {
   color: var(--cm-keyword-color);
   font-weight: normal;
 }
+
 .hljs-keyword {
   color: var(--cm-keyword-color);
   font-family: var(--julia-mono-font-stack) !important;
@@ -485,7 +525,7 @@ span.post-descr {
   float: none;
   font-style: italic;
   font-family: var(--bs-font-sans-serif);
-  color: var(--oxb);
+  color: var(--short-title-color);
   font-size: 90%;
 }
 
@@ -496,6 +536,7 @@ span.post-descr {
 .tags {
   font-family: var(--bs-font-sans-serif);
 }
+
 .tag-link {
   font-size: 120%;
 }

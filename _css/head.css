@@ -1,7 +1,7 @@
 @media (prefers-color-scheme: light) {
   :root {
-    --oxb: #002147;
-    --camb: #A3C1AD;
+    --oxb: rgba(13, 202, 240, 0.8);
+    --camb: rgba(33, 68, 120, 1);
     --banana: #FFE135;
     --lgray: #D3D3D3;
   }
@@ -9,8 +9,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --oxb: lightskyblue;
-    --camb: #A3C1AD;
+    --oxb: rgba(13, 202, 240, 0.8);
+    --camb: rgba(33, 68, 120, 1);
     --banana: #FFE135;
     --lgray: #D3D3D3;
   }
