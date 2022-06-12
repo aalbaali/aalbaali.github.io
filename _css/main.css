@@ -11,7 +11,6 @@
   --h-a-color: inherit;
 }
 
-/* Keep */
 main {
   max-width: none;
   position: relative;
@@ -39,7 +38,7 @@ main a {
 
 /* To hover over links */
 main a:hover {
-  color: navy;
+  color: var(--bs-info);;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -48,6 +47,16 @@ main a:hover {
   }
 }
 
+.alert-secondary {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  .alert-secondary {
+    background: rgba(255, 255, 255, 0.25);
+    color: darkgray;
+  }
+}
 /*  NAVIGATION  */
 
 /* Page title in navigation area */
@@ -287,6 +296,7 @@ pluto-editor footer {
   color: #767676;
   padding-left: 30px;
   font-size: 90%;
+  font-family: var(--bs-font-sans-serif);
 }
 
 .list a {
@@ -474,12 +484,13 @@ td {
 span.post-descr {
   float: none;
   font-style: italic;
+  font-family: var(--bs-font-sans-serif);
   color: var(--oxb);
   font-size: 90%;
 }
 
 .list a:hover {
-  color: #f93;
+  color: grey;
 }
 
 .tags {
@@ -608,4 +619,14 @@ body>main {
 /* To remove Julia variable underlining, keep the following block */
 [data-pluto-variable] {
   text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .bg-light {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+  }
+
+  .text-muted {
+    color: rgba(255, 255, 255, 0.75) !important;
+  }
 }

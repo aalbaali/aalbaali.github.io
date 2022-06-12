@@ -1,8 +1,19 @@
-:root {
-  --oxb: #002147;
-  --camb: #A3C1AD;
-  --banana: #FFE135;
-  --lgray: #D3D3D3;
+@media (prefers-color-scheme: light) {
+  :root {
+    --oxb: #002147;
+    --camb: #A3C1AD;
+    --banana: #FFE135;
+    --lgray: #D3D3D3;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --oxb: lightskyblue;
+    --camb: #A3C1AD;
+    --banana: #FFE135;
+    --lgray: #D3D3D3;
+  }
 }
 
 .bd-placeholder-img {
