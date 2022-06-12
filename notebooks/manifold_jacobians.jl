@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.4
+# v0.19.5
 
 using Markdown
 using InteractiveUtils
@@ -18,7 +18,7 @@ PlutoUI.TableOfContents(title="📚 Table of Contents", indent=true, depth=4, as
 
 # ╔═╡ 24395b9c-ab7e-40fb-8438-032d34e03ca0
 md"""
-In this notebook aims at understanding left and right Jacobians of a (Lie group) manifold.
+This notebook aims at understanding left and right Jacobians of a (Lie group) manifold.
 The notebook uses theory from the references listed at the end of the document.
 """
 
@@ -50,7 +50,7 @@ For example, consider the planar *special euclidean* matrix Lie group $SE(2)$, w
 \in SE(2) \subset \mathbb{R}^{3\times 3},
 \end{align}
 ```
-where $\mathbf{r}\in\mathbb{R}^{2}$ are the *translation* components, $\mathbf{C}\in SO(2)$ is a *rotation matrix*, also referred to as a *cosine direction matrix* (DCM) hence the letter $\mathbf{C}$, and $SO(2)$ is the planar *special orthogonal* matrix Lie group.
+where $\mathbf{r}\in\mathbb{R}^{2}$ are the *translation* components, $\mathbf{C}\in SO(2)$ is a *rotation matrix*, also referred to as a *direction cosine matrix* (DCM) hence the letter $\mathbf{C}$, and $SO(2)$ is the planar *special orthogonal* matrix Lie group.
 
 The only manifolds discussed in this document are matrix Lie groups.
 Therefore, the terms *matrix Lie group*, *Lie group*, *group*, *manifold* will be used interchangeably.
@@ -596,7 +596,13 @@ md"""
 """
 
 # ╔═╡ dd91b631-e927-4638-aadc-4aca13acdc5e
-[DOI("10.48550/ARXIV.1812.01537"), DOI("10.1017/9781316671528"), DOI("10.1007/978-0-8176-4944-9_10")]
+# [DOI("10.48550/ARXIV.1812.01537"), DOI("10.1017/9781316671528"), DOI("10.1007/978-0-8176-4944-9_10")]
+# The commented snippet is the preferred choice, but it was giving exceptions.
+md"""
+1. Solà, Joan; Deray, Jeremie; Atchuthan, Dinesh *A Micro Lie Theory For State Estimation In Robotics*, Arxiv (2018) [10/gpt5rn](https://arxiv.org/abs/1812.01537), cited by 0
+2. Barfoot, Timothy D. *State Estimation For Robotics*, (2017) [10/ggmw5j](https://doi.org/10/ggmw5j), cited by 45
+3. Chirikjian, Gregory S. *Information Theory On Lie Groups, Stochastic Models, Information Theory, And Lie Groups*, Volume 2 (2011) [10/fcbkw5](https://doi.org/10/fcbkw5), cited by 2
+"""
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
