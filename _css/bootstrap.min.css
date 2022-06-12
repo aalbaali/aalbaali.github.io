@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("/css/pluto/dark_color.css");
 
 /*!
  * Bootstrap v5.0.1 (https://getbootstrap.com/)
@@ -4366,7 +4367,7 @@ fieldset:disabled .btn {
 
 .nav-link:focus,
 .nav-link:hover {
-  color: #0a58ca
+  color: #0a58ca;
 }
 
 .nav-link.disabled {

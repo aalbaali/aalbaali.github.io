@@ -1,15 +1,16 @@
-/* html {
-  background: pink;
-}
-@media (prefers-color-scheme: dark) {
-  html {
-    background: pink;
-  }
-} */
-
+@import url("/css/pluto/editor.css");
 @import url("/css/pluto/dark_color.css");
+@import url("/css/pluto/light_color.css");
 
-/* Keep */
+:root {
+  /* Link decorations */
+  --a-text-decoration: underline;
+
+  /* Header link decorations */
+  --h-a-text-decoration: none;
+  --h-a-color: inherit;
+}
+
 main {
   max-width: none;
   position: relative;
@@ -20,27 +21,42 @@ body {
   counter-reset: eqnum;
   width: 100vw;
   position: relative;
+
+  /* Pluto */
+  background-color: var(--main-bg-color);
 }
 
 
-main > .container {
+main>.container {
   padding: 60px 15px 0;
 }
 
 main a {
   color: inherit;
+  text-decoration: var(--a-text-decoration);
 }
 
 /* To hover over links */
 main a:hover {
-  color: navy;
+  color: var(--bs-info);;
 }
+
 @media (prefers-color-scheme: dark) {
   main a:hover {
     color: rgb(51, 171, 249);
   }
 }
 
+.alert-secondary {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+@media (prefers-color-scheme: dark) {
+  .alert-secondary {
+    background: rgba(255, 255, 255, 0.25);
+    color: darkgray;
+  }
+}
 /*  NAVIGATION  */
 
 /* Page title in navigation area */
@@ -56,45 +72,55 @@ nav .container-fluid {
 }
 
 #main-name {
-      font-weight: 500;
-    }
+  font-weight: 500;
+}
+
 #main-nav {
   flex-direction: row;
   padding-left: .5em;
   margin-left: 1em;
   border-left: 1px solid white;
 }
+
 #title-nav {
   flex-direction: row;
 }
+
 #post-title {
   padding-left: .5em;
   margin-left: 1em;
   border-left: 1px solid white;
 }
+
 .nav-item#post-title a.nav-link.active {
   color: var(--bs-info);
 }
+
 @media (max-width: 767px) {
   ul#main-nav li.nav-item {
     padding-right: .5em;
     padding-left: .5em;
   }
+
   #title-nav {
     padding-left: 0;
   }
+
   #post-title {
     padding-left: 1em;
   }
 }
+
 @media (max-width: 620px) {
   #main-nav {
     margin-right: auto !important;
   }
+
   #title-nav {
     width: 100%;
   }
-  #post-title{
+
+  #post-title {
     border-left: none;
     padding-left: 0;
     margin-left: 0;
@@ -106,16 +132,88 @@ nav .container-fluid {
 footer .text-muted a {
   color: inherit;
 }
+
 footer .text-muted a:hover {
   color: var(--oxb);
 }
 
-h1 a, h2 a, h3 a {
-  text-decoration: none;
+/* Headers */
+/* Many of the values here are directly copied from `pluto/editor.css` */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--pluto-output-h-font-family);
+  font-feature-settings: var(--pluto-output-h-font-feature-settings);
+  font-weight: var(--pluto-output-h-font-weight);
+  color: var(--pluto-output-h-color);
+  margin-block-start: 1rem;
+  margin-block-end: 0rem;
 }
 
-h1 a:hover, h2 a:hover, h3 a:hover {
-  color: var(--bs-dark);
+/* Header link decorations */
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+  text-decoration: var(--h-a-text-decoration);
+  color: var(--h-a-color);
+}
+
+h1,
+h2 {
+  font-weight: 700;
+  margin-block-start: 2rem;
+}
+
+h1:first-child,
+h2:first-child {
+  margin-block-start: calc(2rem - var(--pluto-cell-spacing));
+}
+
+h1 {
+  font-size: 2.2rem;
+  border-bottom: 3px solid var(--rule-color);
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+  border-bottom: 2px dotted var(--rule-color);
+  margin-bottom: 0.5rem;
+}
+
+h1:empty,
+h2:empty {
+  border-bottom: none;
+}
+
+h3 {
+  font-size: 1.6rem;
+  /* border-bottom: 2px dotted rgba(0,0,0,.15); */
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+  margin-block-start: 0px;
 }
 
 .container {
@@ -125,11 +223,14 @@ h1 a:hover, h2 a:hover, h3 a:hover {
   padding: 0;
 }
 
-.container h2, h3 {
+.container h2,
+h3 {
   padding-top: 1em;
 }
 
-.container h1, h2, h3 {
+.container h1,
+h2,
+h3 {
   padding-bottom: .25em;
 }
 
@@ -138,8 +239,8 @@ h1 a:hover, h2 a:hover, h3 a:hover {
 .fullscreen {
   /* width: 100vw; */
   padding: 0 0 0 0;
-  margin:  0 0 0 0;
-  border:  0 0 0 0;
+  margin: 0 0 0 0;
+  border: 0 0 0 0;
   /* max-width: 80em; */
 }
 
@@ -175,9 +276,9 @@ pluto-editor footer {
 }
 
 @media (min-width: 40em) {
-    .posts-container {
-        font-size: 18px
-    }
+  .posts-container {
+    font-size: 18px
+  }
 }
 
 .list ul {
@@ -195,6 +296,7 @@ pluto-editor footer {
   color: #767676;
   padding-left: 30px;
   font-size: 90%;
+  font-family: var(--bs-font-sans-serif);
 }
 
 .list a {
@@ -204,30 +306,37 @@ pluto-editor footer {
 /* MATHS */
 
 
-.katex { font-size: 1em !important; }
+.katex {
+  font-size: 1em !important;
+}
 
 .katex-display .katex {
-    display: inline-block; } /* overwrite katex settings */
+  display: inline-block;
+}
+
+/* overwrite katex settings */
 
 .katex-display::after {
-    counter-increment: eqnum;
-    content: "(" counter(eqnum) ")";
-    position: relative;
-    float: right;
-    padding-right: 5px; }
+  counter-increment: eqnum;
+  content: "(" counter(eqnum) ")";
+  position: relative;
+  float: right;
+  padding-right: 5px;
+}
 
 
 .colbox-blue {
-    background-color: #EEF3F5;
-    padding-top: 5px;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 5px;
-    margin-left: 5px;
-    margin-top: 5px;
-    margin-bottom: 1em;
-    border-radius: 0 10px 10px 0;
-    border-left: 5px solid #4C9CF1; }
+  background-color: #EEF3F5;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 5px;
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-bottom: 1em;
+  border-radius: 0 10px 10px 0;
+  border-left: 5px solid #4C9CF1;
+}
 
 blockquote {
   background: #f9f9f9;
@@ -235,6 +344,7 @@ blockquote {
   margin: 1.5em 10px;
   padding: 0.5em 10px;
 }
+
 blockquote p {
   display: inline;
   font-style: italic;
@@ -263,20 +373,59 @@ header nav {
 }
 
 /* CODE AND HIGHLIGHTING */
-
+/* Inherit coding from `pluto/editor.css` so it looks like Julia code */
 .hljs {
+  font-size: 14px;
   padding-left: 1em;
-  background-color: #f4f4f4;
-  border-radius: 10px;
+  border: 1px solid var(--cm-editor-tooltip-border-color);
+  border-radius: 4px;
+  box-shadow: 3px 3px 4px rgb(0 0 0 / 20%);
+  background-color: var(--code-background);
+  color: var(--cm-var-color);
+  font-weight: 700;
+  font-size: 0.75rem;
+  overflow: auto;
 }
 
-.hljs-metaj, .hljs-metas, .hljs-metap { font-weight: bold; }
+.hljs-literal {
+  color: darkblue;
+}
+.hljs-string {
+  color: var(--cm-keyword-color);
+  font-weight: normal;
+}
+.hljs-keyword {
+  color: var(--cm-keyword-color);
+  font-family: var(--julia-mono-font-stack) !important;
+  font-variant-ligatures: none;
+  font-size: 0.75rem;
+  font-weight: var(--pluto-output-font-weight);
+}
 
-.hljs-metaj { color: rgb(25, 179, 51); }
+.hljs-comment,
+.hljs-quote {
+  color: var(--cm-comment-color);
+  font-weight: var(--pluto-output-font-weight);
+  font-style: italic;
+}
 
-.hljs-metas { color: red; }
+.hljs-metaj,
+.hljs-metas,
+.hljs-metap {
+  font-weight: bold;
+}
 
-.hljs-metap { color: rgb(51, 131, 231); }
+.hljs-metaj {
+  color: rgb(25, 179, 51);
+}
+
+.hljs-metas {
+  color: red;
+}
+
+.hljs-metap {
+  color: rgb(51, 131, 231);
+}
 
 pre code.plaintext {
   background-color: #dbebe0;
@@ -289,11 +438,15 @@ ol li ol li {
 }
 
 .img-small img {
-    width: 75%;
-    text-align: center;
-    padding-left: 20%; }
+  width: 75%;
+  text-align: center;
+  padding-left: 20%;
+}
 
-.eqref {color: magenta;}
+.eqref {
+  color: magenta;
+}
+
 .eqref a {
   text-decoration: none;
 }
@@ -301,21 +454,28 @@ ol li ol li {
 /* TABLES */
 
 .ctable table {
-    line-height: 1em;
-    margin-left: auto;
-    margin-right: auto;
-    border-collapse: collapse;
-    text-align: center;
-    margin-bottom: 1.5em;}
+  line-height: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 1.5em;
+}
+
 .ctable tr:first-of-type {
-    background: #eae9f4;
+  background: #eae9f4;
 }
-.ctable tr:first-of-type > th {
-    text-align: center;
+
+.ctable tr:first-of-type>th {
+  text-align: center;
 }
-.ctable tr,th,td{
-    padding: 10px;
-    border: 1px solid lightgray;}
+
+.ctable tr,
+th,
+td {
+  padding: 10px;
+  border: 1px solid lightgray;
+}
 
 .ctable table tbody tr td {
   border: 1px solid lightgray;
@@ -324,14 +484,18 @@ ol li ol li {
 span.post-descr {
   float: none;
   font-style: italic;
+  font-family: var(--bs-font-sans-serif);
   color: var(--oxb);
   font-size: 90%;
 }
 
 .list a:hover {
-  color: #f93;
+  color: grey;
 }
 
+.tags {
+  font-family: var(--bs-font-sans-serif);
+}
 .tag-link {
   font-size: 120%;
 }
@@ -355,6 +519,7 @@ a.tag-link:hover {
 .tags a {
   color: black;
 }
+
 /* Invert color in dark, otherwise won't be visible */
 @media (prefers-color-scheme: dark) {
   .tags a {
@@ -367,29 +532,29 @@ h3 {
 }
 
 pre {
-	position: relative;
-	/* padding: 30px; */
+  position: relative;
+  /* padding: 30px; */
 }
 
 .copy-button {
-	cursor: pointer;
-	border: 0;
-	font-size: 10px;
-	text-transform: uppercase;
-	font-weight: 500;
-	padding: 6px 10px 10px;
-	color: #795548;
-	background-color: transparent;
-	position: absolute;
-	top: 0;
-	right: 0;
+  cursor: pointer;
+  border: 0;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 6px 10px 10px;
+  color: #795548;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .copy-button:hover,
 .copy-button:focus,
 .copy-button:active {
-	outline: 0;
-	background-color: #eee9e6;
+  outline: 0;
+  background-color: #eee9e6;
 }
 
 .tags {
@@ -414,22 +579,25 @@ span.bibref a:hover {
   color: olive;
 }
 
-.reduce-vspace > img {
+.reduce-vspace>img {
   margin-top: -2em;
 }
 
-body > main {
+body>main {
   margin: 0;
   color: var(--oxb);
   align-content: center;
   align-self: center;
-  /* width: 80em; */
-  /* background: rgba(141, 59, 59, 0.85); */
-  /* background: red; */
+
+  /* From Pluto */
+  font-family: var(--pluto-output-font-family);
+  font-weight: var(--pluto-output-font-weight);
+  font-size: var(--pluto-output-font-size);
+  color: var(--pluto-output-color);
 }
 
 @media (prefers-color-scheme: dark) {
-  body > main {
+  body>main {
     margin: 0;
     padding: 0;
     color: var(--cm-editor-text-color);
@@ -451,4 +619,14 @@ body > main {
 /* To remove Julia variable underlining, keep the following block */
 [data-pluto-variable] {
   text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .bg-light {
+    background-color: rgba(255, 255, 255, 0.25) !important;
+  }
+
+  .text-muted {
+    color: rgba(255, 255, 255, 0.75) !important;
+  }
 }
