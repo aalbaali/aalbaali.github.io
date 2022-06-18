@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.19.8
+# v0.19.9
 
 using Markdown
 using InteractiveUtils
@@ -596,13 +596,7 @@ md"""
 """
 
 # ╔═╡ dd91b631-e927-4638-aadc-4aca13acdc5e
-# [DOI("10.48550/ARXIV.1812.01537"), DOI("10.1017/9781316671528"), DOI("10.1007/978-0-8176-4944-9_10")]
-# The commented snippet is the preferred choice, but it was giving exceptions.
-md"""
-1. Solà, Joan; Deray, Jeremie; Atchuthan, Dinesh *A Micro Lie Theory For State Estimation In Robotics*, Arxiv (2018) [10/gpt5rn](https://arxiv.org/abs/1812.01537), cited by 0
-2. Barfoot, Timothy D. *State Estimation For Robotics*, (2017) [10/ggmw5j](https://doi.org/10/ggmw5j), cited by 45
-3. Chirikjian, Gregory S. *Information Theory On Lie Groups, Stochastic Models, Information Theory, And Lie Groups*, Volume 2 (2011) [10/fcbkw5](https://doi.org/10/fcbkw5), cited by 2
-"""
+[DOI("10.48550/ARXIV.1812.01537"), DOI("10.1017/9781316671528"), DOI("10.1007/978-0-8176-4944-9_10")]
 
 # ╔═╡ 00000000-0000-0000-0000-000000000001
 PLUTO_PROJECT_TOML_CONTENTS = """
