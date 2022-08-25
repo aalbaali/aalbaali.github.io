@@ -32,6 +32,10 @@ current_year = Dates.year(Dates.today())
 notebooks_html_dir = "notebooks/html"
 +++
 
+<!-- Links -->
+<!-- Create an anchor that can be referenced by markdown (e.g., using [](#anchor-id))-->
+\newcommand{\anchor}[1]{~~~<a name="#1"></a>~~~}
+
 <!--
 Add here global latex commands to use throughout your pages.
 -->
@@ -42,12 +46,10 @@ Add here global latex commands to use throughout your pages.
 \newcommand{\spe}[1]{\esp#1\esp}
 \newcommand{\speq}{\spe{=}}
 
-\newcommand{\E}{\mathbb E}
-\newcommand{\R}{\mathbb R}
-\newcommand{\eR}{\overline{\mathbb R}}
+\newcommand{\mbb}[1]{\mathbb{#1}}
+\newcommand{\mf}[1]{\mathfrak{#1}}
 
-\newcommand{\scal}[1]{\left\langle#1\right\rangle}
-
+\newcommand{\mbf}[1]{\mathbf{#1}}
 <!-- ABI specific -->
 \newcommand{\KL}{\mathrm{KL}}
 
@@ -59,16 +61,14 @@ Add here global latex commands to use throughout your pages.
 <!-- matrix theory specific -->
 \newcommand{\inv}{^{-1}}
 
-<!-- in-text replacements -->
-\newcommand{\abi}[1]{/pub/csml/abi/!#1}
-\newcommand{\cvx}[1]{/pub/csml/cvxopt/!#1}
-\newcommand{\mth}[1]{/pub/csml/mtheory/!#1}
-\newcommand{\uns}[1]{/pub/csml/unsorted/!#1}
+<!-- Figures -->
 
-<!-- Text decoration -->
-\newcommand{\ul}[1]{~~~<span id=underline>!#1</span>~~~}
-\newcommand{\htmlcolor}[2]{~~~<font color="!#1">!#2</font>~~~}
-
-<!-- Text alignment -->
-\newcommand{\br}{~~~</br>~~~} <!-- skip a line -->
-\newcommand{\nobr}[1]{~~~<nobr>~~~#1~~~</nobr>~~~}
+<!-- Check https://github.com/tlienart/Franklin.jl/issues/437 -->
+\newcommand{\figenv}[3]{
+~~~
+<figure style="text-align:center;">
+<img src="!#2" style="padding:0;#3" alt="#1"/>
+<figcaption>#1</figcaption>
+</figure>
+~~~
+}
