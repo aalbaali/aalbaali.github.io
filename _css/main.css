@@ -309,8 +309,18 @@ pluto-editor footer {
   display: none !important
 }
 
-.posts-container {
+.resume-container {
   max-width: 760px;
+}
+
+@media (min-width: 40em) {
+  .resume-container  {
+    font-size: 18px
+  }
+}
+
+.posts-container {
+  max-width: 1760px;
 }
 
 @media (min-width: 40em) {
