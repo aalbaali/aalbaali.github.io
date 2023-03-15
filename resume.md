@@ -2,12 +2,10 @@
 cover=true
 +++
 
-@@bio
-
-@@pt-4 @@
+@@resume-container
 
 ~~~
-<div id="adobe-dc-view" style="width: 800px;"></div>
+<div id="adobe-dc-view" style="height:1100px; width=2760px"></div>
 <script src="https://documentservices.adobe.com/view-sdk/viewer.js"></script>
 <script type="text/javascript">
 	document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
@@ -15,11 +13,16 @@ cover=true
 		adobeDCView.previewFile({
 			content:{location: {url: "/assets/resume.pdf"}},
 			metaData:{fileName: "resume.pdf"}
-		}, {embedMode: "IN_LINE"});
+		},
+		{
+	  	embedMode: "SIZED_CONTAINER",
+			defaultViewMode: "FIT_WIDTH",
+			showFullScreen: true,
+			showDownloadPDF: true,
+			exitPDFViewerType: "CLOSE",
+	  });
 	});
 </script>
 ~~~
 
-@@pt-5 @@
-
-@@ <!-- end of bio div -->
+@@ <!-- end of resume div -->
