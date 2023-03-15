@@ -8,6 +8,12 @@
     <priority>0.5</priority>
 </url>
 <url>
+    <loc>resume/index.html</loc>
+    <lastmod>2023-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+</url>
+<url>
     <loc>tags/index.html</loc>
     <lastmod>2023-03-15</lastmod>
     <changefreq>monthly</changefreq>
