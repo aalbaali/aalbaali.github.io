@@ -2,6 +2,9 @@
 # directory and export them to HTML files stored under `notebooks/html`.
 #
 # To build all notebooks, pass "build-all" as the first argument
+#
+# @example
+#   julia .github/workflows/build_notebooks.jl build-all
 
 import Pkg;
 Pkg.add("Pluto");

@@ -8,11 +8,22 @@ cover=true
 
 # Bio
 
-I am robotics software engineer at [Avidbots](https://www.avidbots.com), where I work with the localization team.
-My background is in state estimation and control theory.
-I have interest in programming and in applied mathematical topics such as optimization, control theory, and numerical methods.
+I am robotics software engineer at [Avidbots](https://www.avidbots.com), where I work with the localization and mapping team.
+My background is in optimization, state estimation, and SLAM.
+I have interest in programming applied mathematical algorithms that use optimization, probability, control theory, and numerical methods.
 I hope to share some of my passion with the world in this blog.
 
+~~~
+<!-- button 3 -->
+<center>
+<a
+  href="/resume/"
+  class="btn btn-lg btn-secondary fw-bold border-camb bg-oxb text-camb mx-2"
+>
+Resume
+</a>
+</center>
+~~~
 
 # About this blog
 In a nutshell, this blog is an experiment of sharing my notes and thoughts.
