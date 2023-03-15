@@ -106,7 +106,7 @@ h3#toptitle a {
 }
 
 .bio p > a {
-  color: var(--camb);
+  color: var(--link);
 }
 
 .social-icons {
