@@ -495,7 +495,7 @@ ol li ol li {
 }
 
 .eqref {
-  color: magenta;
+  color: var(--camb);
 }
 
 .eqref a {
