@@ -3,7 +3,8 @@
 #
 # To build all notebooks, pass "build-all" as the first argument
 #
-# @example
+# @examples
+#   julia .github/workflows/build_notebooks.jl notebooks/manifold_jacobians.jl
 #   julia .github/workflows/build_notebooks.jl build-all
 
 import Pkg;
@@ -40,4 +41,5 @@ for file_jl in julia_files
     filename_html = splitext(splitdir(file_jl)[end])[1] * ".html";
     fullfile_html = joinpath(nb_dir, "html", filename_html);
     write(fullfile_html, html_contents);
+    println("Done writing to '$fullfile_html'")
 end
