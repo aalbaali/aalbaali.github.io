@@ -14,12 +14,6 @@
     <priority>0.5</priority>
 </url>
 <url>
-    <loc>posts/2023/05/28-reference-frames-and-transforms/index.html</loc>
-    <lastmod>2023-05-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-</url>
-<url>
     <loc>tags/index.html</loc>
     <lastmod>2023-05-28</lastmod>
     <changefreq>monthly</changefreq>
