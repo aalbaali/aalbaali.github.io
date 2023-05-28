@@ -8,11 +8,11 @@ cover=true
 
 # Bio
 
-I am robotics software engineer at [Avidbots](https://www.avidbots.com), where I work with the localization and mapping team.
-My background is in optimization, state estimation, and SLAM.
-I have interest in programming applied mathematical algorithms that use optimization, probability, control theory, and numerical methods.
+I am robotics software engineer mainly interested in perception, navigation, localization and mapping.
+My background is in optimization, state estimation, and SLAM and I have interest in programming applied mathematical algorithms that use optimization, probability, control theory, and numerical methods.
 I hope to share some of my passion with the world in this blog.
 
+If you are a recruiter that's interested in my resume, then here it is.
 ~~~
 <!-- button 3 -->
 <center>
@@ -27,13 +27,14 @@ Resume
 
 # About this blog
 In a nutshell, this blog is an experiment of sharing my notes and thoughts.
+I will sometimes use it to as a more thorough `README.md` for software projects that I work on.
 
+I enjoy reading technical papers and books on robotics and programming.
+Part of my reading process is taking some notes, but they are usually jotted notes and not thorough enough.
+So, maybe, writing my notes on a blog will force me to write more thorough notes.
 
-I enjoy reading and learning about new and old concepts, whether it's a topic in math or a bit of programming.
-It's quite frustrating to learn a topic only to forget it few months later.
-So, a while back, I decided to take more thorough notes whenever I'm learning a new topic.
-Though I personally find these notes useful, they are not usually shared.
-So I thought of sharing some of these notes on this blog.
+Feel free to reach out to me if you find a mistake or some issue on the blog.
+Happy reading!
 
 
 @@pt-4 @@
