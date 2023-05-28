@@ -17,13 +17,19 @@ for (i, arg) in enumerate(ARGS)
 end
 
 # Notebooks directory 
-nb_dir = "notebooks";
+notebook_dir = "notebooks";
+html_dir = joinpath(notebook_dir, "html");
+
+# Ensure the directory exists
+if !isdir(html_dir)
+  mkdir(html_dir)
+end
 
 # The files are passed as arguments
 all_files = ARGS;
 
 if length(ARGS) > 0 && ARGS[1] == "build-all"
-    all_files = readdir(nb_dir; join=true);
+    all_files = readdir(notebook_dir; join=true);
 end
 
 # Match Julia files stored strictly under `notebooks/` directory. It ignores
@@ -39,7 +45,7 @@ for file_jl in julia_files
     nb = Pluto.SessionActions.open(s, file_jl; run_async=false);
     html_contents = Pluto.generate_html(nb);
     filename_html = splitext(splitdir(file_jl)[end])[1] * ".html";
-    fullfile_html = joinpath(nb_dir, "html", filename_html);
+    fullfile_html = joinpath(html_dir, filename_html);
     write(fullfile_html, html_contents);
     println("Done writing to '$fullfile_html'")
 end

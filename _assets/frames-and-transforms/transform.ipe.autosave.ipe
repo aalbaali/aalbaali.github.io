@@ -1,0 +1,620 @@
+<?xml version="1.0"?>
+<!DOCTYPE ipe SYSTEM "ipe.dtd">
+<ipe version="70218" creator="Ipe 7.2.27">
+<info created="D:20230527154451" modified="D:20230527154451"/>
+<ipestyle name="basic">
+<symbol name="arrow/arc(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/farc(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/ptarc(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/fptarc(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="mark/circle(sx)" transformations="translations">
+<path fill="sym-stroke">
+0.6 0 0 0.6 0 0 e
+0.4 0 0 0.4 0 0 e
+</path>
+</symbol>
+<symbol name="mark/disk(sx)" transformations="translations">
+<path fill="sym-stroke">
+0.6 0 0 0.6 0 0 e
+</path>
+</symbol>
+<symbol name="mark/fdisk(sfx)" transformations="translations">
+<group>
+<path fill="sym-fill">
+0.5 0 0 0.5 0 0 e
+</path>
+<path fill="sym-stroke" fillrule="eofill">
+0.6 0 0 0.6 0 0 e
+0.4 0 0 0.4 0 0 e
+</path>
+</group>
+</symbol>
+<symbol name="mark/box(sx)" transformations="translations">
+<path fill="sym-stroke" fillrule="eofill">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+-0.4 -0.4 m
+0.4 -0.4 l
+0.4 0.4 l
+-0.4 0.4 l
+h
+</path>
+</symbol>
+<symbol name="mark/square(sx)" transformations="translations">
+<path fill="sym-stroke">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+</path>
+</symbol>
+<symbol name="mark/fsquare(sfx)" transformations="translations">
+<group>
+<path fill="sym-fill">
+-0.5 -0.5 m
+0.5 -0.5 l
+0.5 0.5 l
+-0.5 0.5 l
+h
+</path>
+<path fill="sym-stroke" fillrule="eofill">
+-0.6 -0.6 m
+0.6 -0.6 l
+0.6 0.6 l
+-0.6 0.6 l
+h
+-0.4 -0.4 m
+0.4 -0.4 l
+0.4 0.4 l
+-0.4 0.4 l
+h
+</path>
+</group>
+</symbol>
+<symbol name="mark/cross(sx)" transformations="translations">
+<group>
+<path fill="sym-stroke">
+-0.43 -0.57 m
+0.57 0.43 l
+0.43 0.57 l
+-0.57 -0.43 l
+h
+</path>
+<path fill="sym-stroke">
+-0.43 0.57 m
+0.57 -0.43 l
+0.43 -0.57 l
+-0.57 0.43 l
+h
+</path>
+</group>
+</symbol>
+<symbol name="arrow/fnormal(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/pointed(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/fpointed(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-0.8 0 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/linear(spx)">
+<path stroke="sym-stroke" pen="sym-pen">
+-1 0.333 m
+0 0 l
+-1 -0.333 l
+</path>
+</symbol>
+<symbol name="arrow/fdouble(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+-1 0 m
+-2 0.333 l
+-2 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/double(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+-1 0 m
+-2 0.333 l
+-2 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/mid-normal(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0.5 0 m
+-0.5 0.333 l
+-0.5 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/mid-fnormal(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0.5 0 m
+-0.5 0.333 l
+-0.5 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/mid-pointed(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+0.5 0 m
+-0.5 0.333 l
+-0.3 0 l
+-0.5 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/mid-fpointed(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+0.5 0 m
+-0.5 0.333 l
+-0.3 0 l
+-0.5 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/mid-double(spx)">
+<path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
+1 0 m
+0 0.333 l
+0 -0.333 l
+h
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<symbol name="arrow/mid-fdouble(spx)">
+<path stroke="sym-stroke" fill="white" pen="sym-pen">
+1 0 m
+0 0.333 l
+0 -0.333 l
+h
+0 0 m
+-1 0.333 l
+-1 -0.333 l
+h
+</path>
+</symbol>
+<anglesize name="22.5 deg" value="22.5"/>
+<anglesize name="30 deg" value="30"/>
+<anglesize name="45 deg" value="45"/>
+<anglesize name="60 deg" value="60"/>
+<anglesize name="90 deg" value="90"/>
+<arrowsize name="large" value="10"/>
+<arrowsize name="small" value="5"/>
+<arrowsize name="tiny" value="3"/>
+<color name="blue" value="0 0 1"/>
+<color name="brown" value="0.647 0.165 0.165"/>
+<color name="darkblue" value="0 0 0.545"/>
+<color name="darkcyan" value="0 0.545 0.545"/>
+<color name="darkgray" value="0.663"/>
+<color name="darkgreen" value="0 0.392 0"/>
+<color name="darkmagenta" value="0.545 0 0.545"/>
+<color name="darkorange" value="1 0.549 0"/>
+<color name="darkred" value="0.545 0 0"/>
+<color name="gold" value="1 0.843 0"/>
+<color name="gray" value="0.745"/>
+<color name="green" value="0 1 0"/>
+<color name="lightblue" value="0.678 0.847 0.902"/>
+<color name="lightcyan" value="0.878 1 1"/>
+<color name="lightgray" value="0.827"/>
+<color name="lightgreen" value="0.565 0.933 0.565"/>
+<color name="lightyellow" value="1 1 0.878"/>
+<color name="navy" value="0 0 0.502"/>
+<color name="orange" value="1 0.647 0"/>
+<color name="pink" value="1 0.753 0.796"/>
+<color name="purple" value="0.627 0.125 0.941"/>
+<color name="red" value="1 0 0"/>
+<color name="seagreen" value="0.18 0.545 0.341"/>
+<color name="turquoise" value="0.251 0.878 0.816"/>
+<color name="violet" value="0.933 0.51 0.933"/>
+<color name="yellow" value="1 1 0"/>
+<dashstyle name="dash dot dotted" value="[4 2 1 2 1 2] 0"/>
+<dashstyle name="dash dotted" value="[4 2 1 2] 0"/>
+<dashstyle name="dashed" value="[4] 0"/>
+<dashstyle name="dotted" value="[1 3] 0"/>
+<gridsize name="10 pts (~3.5 mm)" value="10"/>
+<gridsize name="14 pts (~5 mm)" value="14"/>
+<gridsize name="16 pts (~6 mm)" value="16"/>
+<gridsize name="20 pts (~7 mm)" value="20"/>
+<gridsize name="28 pts (~10 mm)" value="28"/>
+<gridsize name="32 pts (~12 mm)" value="32"/>
+<gridsize name="4 pts" value="4"/>
+<gridsize name="56 pts (~20 mm)" value="56"/>
+<gridsize name="8 pts (~3 mm)" value="8"/>
+<opacity name="10%" value="0.1"/>
+<opacity name="30%" value="0.3"/>
+<opacity name="50%" value="0.5"/>
+<opacity name="75%" value="0.75"/>
+<pen name="fat" value="1.2"/>
+<pen name="heavier" value="0.8"/>
+<pen name="ultrafat" value="2"/>
+<symbolsize name="large" value="5"/>
+<symbolsize name="small" value="2"/>
+<symbolsize name="tiny" value="1.1"/>
+<textsize name="Huge" value="\Huge"/>
+<textsize name="LARGE" value="\LARGE"/>
+<textsize name="Large" value="\Large"/>
+<textsize name="footnote" value="\footnotesize"/>
+<textsize name="huge" value="\huge"/>
+<textsize name="large" value="\large"/>
+<textsize name="script" value="\scriptsize"/>
+<textsize name="small" value="\small"/>
+<textsize name="tiny" value="\tiny"/>
+<textstyle name="center" begin="\begin{center}" end="\end{center}"/>
+<textstyle name="item" begin="\begin{itemize}\item{}" end="\end{itemize}"/>
+<textstyle name="itemize" begin="\begin{itemize}" end="\end{itemize}"/>
+<tiling name="falling" angle="-60" step="4" width="1"/>
+<tiling name="rising" angle="30" step="4" width="1"/>
+</ipestyle>
+<ipestyle name="master-preamble">
+<preamble>
+
+
+% Package list
+\usepackage[top=1.0in, bottom=1.0in, left=1.0in, right=1.0in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{subcaption}
+\usepackage{enumerate}
+\usepackage{cite}
+\usepackage{setspace}
+\doublespacing
+\usepackage{cancel}
+\usepackage[toc,page]{appendix}
+\usepackage{color}
+\usepackage{wrapfig}
+\usepackage{xspace}
+\usepackage{paralist}
+\usepackage[colorlinks, citecolor=black, linkcolor=black, linktocpage=true, hidelinks]{hyperref}
+\usepackage{cleveref}
+% TH: Format cref and Cref commands
+\crefformat{equation}{(#2#1#3)}
+\Crefformat{equation}{Equation~(#2#1#3)}
+\usepackage{bookmark}
+\usepackage[printonlyused]{acronym}
+\usepackage{titlesec}
+\usepackage{parskip}
+\usepackage{times}
+\usepackage{array}
+\usepackage{stfloats}
+\usepackage{framed}
+\usepackage{multirow}
+\usepackage{accents}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{nomencl}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+}
+\usepackage{underscore}
+
+% Custom commands
+\newcommand{\ignore}[1]{}
+\newcommand{\etal}[0]{{\em et~al.\@}\xspace}
+\newcommand{\eg}[0]{{e.g.\@}\xspace}
+\newcommand{\ie}[0]{{i.e.\@}\xspace}
+\newcommand{\colour}[2]{\color{#1}{#2}\color{black}\xspace} % : red, green, blue, cyan, magenta, yellow, black, gray, white, darkgray, lightgray, brown, lime, olive, orange, pink, purple, teal, violet.
+\newcommand{\thline}{\begin{center} \rule{\linewidth}{0.5mm} \\ \end{center}}
+\newcommand{\wrt}{w.r.t.\xspace}
+
+%% Operators
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert} % Norm
+\newcommand{\abs}[1]{\left\vert#1\right\vert} % Absolute value
+\newcommand{\pd}[2]{{\frac{\partial #1}{\partial #2}}} % Partial derivative
+\newcommand{\mc}[1]{\mathcal{#1}}  
+
+%% Matrix shortcuts
+%\newcommand{\bbm}{\begin{bmatrix}}
+%\newcommand{\ebm}{\end{bmatrix}}
+\newcommand{\bma}[1]{\left[\begin{array}{#1}}
+	\newcommand{\ema}{\end{array}\right]}
+
+% Basic bold for letters and symbols
+\DeclareMathAlphabet{\mbf}{OT1}{ptm}{b}{n}
+\newcommand{\mbs}[1]{{\boldsymbol{#1}}}
+\newcommand{\mbm}[1]{ \textbf{\textit{#1}} } % {\bm #1}
+\newcommand{\mbc}[1]{ \boldsymbol{\mathcal{#1}} } 
+
+% helper bold symbols
+\newcommand{\mbsdot}[1]{{\dot{\boldsymbol{#1}}}}
+\newcommand{\mbsbar}[1]{{\bar{\boldsymbol{#1}}}}
+\newcommand{\mbshat}[1]{{\hat{\boldsymbol{#1}}}}
+\newcommand{\mbsvec}[1]{{\underrightarrow{\boldsymbol{#1}}}}
+\newcommand{\mbsdel}[1]{{\delta {\boldsymbol{#1}}}}
+\newcommand{\mbstilde}[1]{{\tilde{\boldsymbol{#1}}}}
+\newcommand{\mbfdot}[1]{{\dot{\mbf{#1}}}}
+\newcommand{\mbfbar}[1]{{\bar{\mbf{#1}}}}
+\newcommand{\mbfhat}[1]{{\hat{\mbf{#1}}}}
+\newcommand{\mbfvec}[1]{{\underrightarrow{\mbf{#1}}}}
+\newcommand{\mbfdel}[1]{{\delta{\mbf{#1}}}}
+\newcommand{\mbftilde}[1]{{\tilde{\mbf{#1}}}}
+
+% A reference frame definition
+\newcommand{\rframe}[1]{{\ensuremath \underrightarrow{\mathcal{F}}_{#1}}}
+\newcommand{\vectrix}[1]{\ensuremath \underrightarrow{\boldsymbol{\mathcal{F}}}_{#1}}
+\newcommand{\nvectrix}{{\ensuremath \underrightarrow{\boldsymbol{\mathcal{O}}}}}
+%\def\dota{{\raisebox{-2pt}{\LARGE $\cdot$}}}
+%\def\dotb{{\raisebox{-0.6ex}{ \kern0.2ex\raisebox{0.8ex}{\tiny $\circ$}}}}
+%\def\ddota{{\raisebox{-0.6ex}{ \raise0.2ex\hbox{ \LARGE $\cdot\hspace*{-0.2ex}\cdot$}}}}
+%\def\ddotb{{\raisebox{-0.6ex}{ \kern0.2ex\raisebox{0.8ex}{\tiny $\circ\circ$}}}}
+\def\fdota{{\raisebox{-2pt}{\LARGE $\cdot$}}}
+% \def\fdotb{{\raisebox{-0.6ex}{ \kern0.2ex\raisebox{0.8ex}{\tiny $\circ$}}}}
+\def\fdotb{{\raisebox{-0.6ex}{ \kern0.2ex\raisebox{0.8ex}{\tiny $\hspace*{-1ex}\circ$}}}}
+% \def\fddota{{\raisebox{-0.6ex}{ \raise0.2ex\hbox{ \LARGE $\cdot\hspace*{-0.2ex}\cdot$}}}}
+\def\fddota{{\raisebox{-2pt}{\LARGE $\cdot\hspace*{-0.2ex}\cdot$}}}
+% \def\fddotb{{\raisebox{-0.6ex}{ \kern0.2ex\raisebox{0.8ex}{\tiny $\circ\circ$}}}}
+\def\fddotb{{\raisebox{-0.6ex}{ \kern0.2ex\raisebox{0.8ex}{\tiny $\hspace*{-1ex}\circ\circ$}}}}
+% \newcommand{\fdot}[1]{{\fdota{#1}}}
+% \newcommand{\dota}[1]{ {#1}^{ \mbox{ \LARGE $\cdot$} } }
+% \newcommand{\fdot}[1]{{^{\fdota{\mbox{\footnotesize${#1}$}}}}}
+\newcommand{\fdot}[1]{{^{\fdota{\mbox{\scriptsize${#1}$}}}}}
+% \newcommand{\fddot}[1]{{^{\fddota{\mbox{\footnotesize${#1}$}}}}}
+\newcommand{\fddot}[1]{{^{\fddota{\mbox{\scriptsize${#1}$}}}}}
+\newcommand{\pspace}{\mathbb{P}} 
+\newcommand{\vecnorm}[1]{||{\underrightarrow{{#1}}}||_2}
+
+
+\newcommand{\p}{\partial}
+\newcommand{\f}{\frac}
+\newcommand{\smallf}[2]{\mbox{$\textstyle{\frac{#1}{#2}}$}}
+% \newcommand{\innerp}[3]{\left\langle #1,#2 \right\rangle_{#3}}
+\newcommand{\innerp}[2]{\left\langle #1 , #2 \right\rangle}
+% \newcommand{\norm}[2]{\left| #1 \right|_{#2}}
+\newcommand{\ura}[1]{{\underrightarrow{{#1}}}}
+\newcommand{\dt}{\mathrm{d}t} 
+\newcommand{\dee}{\textrm{d}}
+\newcommand{\mcL}[1]{\mathcal{L}\left\{#1\right\}}
+% \newcommand{\ubar}[1]{\stackunder[1.2pt]{$#1$}{\rule{.8ex}{.075ex}}}
+\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
+
+
+\newcommand{\trans}{{\ensuremath{\mathsf{T}}}} % transpose
+\newcommand{\herm}{{\ensuremath{\mathsf{H}}}} % 
+% \newcommand{\utimes}{{\ensuremath{\mathsf{v}}}} % 
+\newcommand{\utimes}{ {\raisebox{-0.6ex}{ \kern-1.0ex\raisebox{0.6ex}{ \small $\mathsf{v}$}}} } % 
+\newcommand{\fouriert}[1]{ \texttt{F} \left\{ {#1} \right\} } % ourier transform
+\newcommand{\invfouriert}[1]{ \texttt{F}^{-1} \left\{ {#1} \right\} } % inverse % Fourier transform
+\newcommand{\laplacet}[1]{ \texttt{L} \left\{ {#1} \right\} } % 
+\newcommand{\invlaplacet}[1]{ \texttt{L}^{-1} \left\{ {#1} \right\} } % 
+\newcommand{\trace}{ {\ensuremath{\mathrm{tr}}} } % \trace
+\newcommand{\rk}{{\ensuremath{\mathrm{rk}}}} % rank
+\newcommand{\cone}{{\ensuremath{\mathrm{cone}}}}
+% \newcommand{\exp}[1]{  \ensuremath{\mathrm{exp}} \left( {#1} \right) }
+% \newcommand{\span}{ {\ensuremath{\mathrm{span}}} }
+
+\newcommand{\onehalf}{\mbox{$\textstyle{\frac{1}{2}}$}}
+\newcommand{\onequarter}{\mbox{$\textstyle{\frac{1}{4}}$}}
+\newcommand{\invtwopi}{\mbox{$\textstyle{\frac{1}{2 \pi}}$}} 
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\bdis}{\begin{displaymath}}
+\newcommand{\edis}{\end{displaymath}}
+\newcommand{\beqarray}{\begin{eqnarray}}
+\newcommand{\eeqarray}{\end{eqnarray}}
+\newcommand{\beqarraynn}{\begin{eqnarray*}}
+	\newcommand{\eeqarraynn}{\end{eqnarray*}}
+
+\renewcommand{\theenumii}{\arabic{enumii}}
+\renewcommand{\labelenumii}{\theenumi.\theenumii.}
+\makeatletter
+\renewcommand{\p@enumii}{\theenumi.}
+\makeatother
+%\renewcommand{\labelenumi}{\arabic{enumi}.}
+%\renewcommand{\labelenumii}{\labelenumi\arabic{enumii}}
+%\renewcommand{\labelenumiii}{\labelenumii.\arabic{enumiii}}
+
+\newenvironment{packed_enum}{
+	\begin{enumerate}
+		\setlength{\itemsep}{1pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}
+	}{\end{enumerate}}
+
+\newenvironment{packed_itemize}{
+	\begin{itemize}
+		\setlength{\itemsep}{1pt}
+		\setlength{\parskip}{0pt}
+		\setlength{\parsep}{0pt}
+	}{\end{itemize}}
+
+\usepackage{fancyhdr, lastpage}
+\pagestyle{fancy}
+\lhead{}
+% \chead{\small Page \thepage\ of \pageref{LastPage}} 
+\rhead{} 
+\chead{} 
+\cfoot{}
+\rfoot{\small Page \thepage\ of \pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.0pt} 
+\renewcommand{\footrulewidth}{0.75pt}
+
+% Custom Environments such as Theorems, Lemmas, etc.
+\theoremstyle{definition} % This causes the text to be normal text, rather then italic
+\newtheorem{theorem}{Theorem}[section] % [section] % [chapter]
+\newtheorem{lemma}{Lemma}[section] % [section]
+\newtheorem{proposition}{Proposition}[section] % [section]
+\newtheorem{corollary}{Corollary}[section] % [section]
+\newtheorem{example}{Example}[section] % [section]
+\newtheorem{definition}{Definition}[section] % [section]
+\newtheorem{remark}{Remark}[section] % [section]
+\newtheorem{property}{Property}[section] % [section]
+\newtheorem{falgorithm}{Algorithm}[section] % [section]
+
+% To have \subsubsubsection be numbered, and appear in TOC.
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TH ADDITIONS
+
+\DeclareMathOperator{\dcmToRotn}{dcm2rotnVec}
+\newcommand{\Expect}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator*{\argmin}{arg\,min}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Computer code
+\newcommand{\code}[1]{\texttt{#1}}	
+
+% Environment for printing lines of code
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+% TODO: Make this accep and optional width argument.
+% See:https://tex.stackexchange.com/questions/83614/set-horizontal-width-on-custom-listings-environment
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{backcolour},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{codegray},
+	stringstyle=\color{codepurple},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true,                 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+
+\lstset{style=mystyle}
+
+</preamble>
+</ipestyle>
+<page>
+<layer name="alpha"/>
+<view layers="alpha" active="alpha"/>
+<path layer="alpha" matrix="1 0 0 1 64 0" stroke="navy" pen="fat" arrow="normal/normal">
+128 576 m
+192 576 l
+</path>
+<path matrix="1 0 0 1 64 0" stroke="navy" pen="fat" arrow="normal/normal">
+128 576 m
+128 640 l
+</path>
+<text matrix="1 0 0 1 49.999 -3.652" transformations="translations" pos="112 560" stroke="black" type="label" width="28.934" height="16.936" depth="3.72" valign="baseline" size="Huge" style="math">\mathcal{F}_{a}</text>
+<use matrix="1 0 0 1 0 64" name="mark/disk(sx)" pos="192 512" size="large" stroke="darkblue"/>
+<use matrix="1 0 0 1 0 64" name="mark/disk(sx)" pos="192 512" size="large" stroke="darkblue"/>
+<text matrix="1 0 0 1 129.999 92.348" transformations="translations" pos="112 560" stroke="black" type="label" width="12.181" height="10.672" depth="4.82" valign="baseline" size="Huge" style="math">p</text>
+<use matrix="1 0 0 1 64 128" name="mark/disk(sx)" pos="192 512" size="large" stroke="darkblue"/>
+<path matrix="0.5 0 0 1 96 64" stroke="darkgreen" pen="fat" arrow="normal/normal">
+192 512 m
+320 576 l
+</path>
+<text matrix="1 0 0 1 9.9126 107.13" transformations="translations" pos="112 560" stroke="darkgreen" type="label" width="124.138" height="23.34" depth="6.18" valign="baseline" size="Huge" style="math">\mathbf{r}^{pa}_{a}=[1 \,\; 1]^\mathsf{T}</text>
+<text matrix="1 0 0 1 217.913 89.1305" transformations="translations" pos="112 560" stroke="1 0.549 0" type="label" valign="baseline" size="Huge" style="math">\mathbf{r}^{pb}_{b}=[0 \,\; \sqrt{2}]^{\mathsf{T}}</text>
+<path matrix="0.707107 0.707107 -0.707107 0.707107 636.784 78.1968" stroke="navy" pen="fat" arrow="normal/normal">
+128 576 m
+192 576 l
+</path>
+<path matrix="0.707107 0.707107 -0.707107 0.707107 636.784 78.1968" stroke="navy" pen="fat" arrow="normal/normal">
+128 576 m
+128 640 l
+</path>
+<text matrix="1 0 0 1 177.999 -3.652" transformations="translations" pos="112 560" stroke="black" type="label" width="26.916" height="16.939" depth="5.81" valign="baseline" size="Huge" style="math">\mathcal{F}_{b}</text>
+<use matrix="1 0 0 1 128 64" name="mark/disk(sx)" pos="192 512" size="large" stroke="darkblue"/>
+<use matrix="1 0 0 1 128 64" name="mark/disk(sx)" pos="192 512" size="large" stroke="darkblue"/>
+<path stroke="darkorange" pen="fat" arrow="normal/normal">
+320 576 m
+256 640 l
+</path>
+<text matrix="1 0 0 1 233.913 -38.8695" transformations="translations" pos="112 560" stroke="brown" type="label" width="179.222" height="58.197" depth="45.91" valign="baseline" size="Huge" style="math">\mbf{T}^{ba}_{ab}
+=
+\begin{bmatrix}
+\mbf{C}_{ab} &amp; \mbf{r}^{ba}_{a} \\
+\mbf{0} &amp; 1
+\end{bmatrix}</text>
+<path stroke="brown" pen="fat" arrow="normal/normal">
+192 544 m
+256 528
+304 544 c
+</path>
+</page>
+</ipe>
