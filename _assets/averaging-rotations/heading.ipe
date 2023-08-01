@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70218" creator="Ipe 7.2.27">
-<info created="D:20230319141905" modified="D:20230730144753"/>
+<info created="D:20230730134311" modified="D:20230730143035"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -313,28 +313,23 @@ h
 <page>
 <layer name="alpha"/>
 <view layers="alpha" active="alpha"/>
-<path layer="alpha" matrix="1.6 0 0 1 -172.8 0" stroke="darkgray" pen="heavier">
-288 736 m
-328 736 l
+<path layer="alpha" matrix="0.8 0 0 1.33333 25.6 -213.333" stroke="0.208 0.518 0.894" pen="fat" arrow="normal/normal">
+128 640 m
+208 688 l
 </path>
-<path matrix="1.66667 0 0 1 -192 0" stroke="0.11 0.443 0.847" pen="fat" arrow="normal/normal">
-288 736 m
-240 736 l
+<path stroke="0.149 0.635 0.412" dash="dashed" pen="heavier" arrow="normal/normal">
+176 640 m
+48 0 0 48 128 640 161.941 673.941 a
 </path>
-<path stroke="0.18 0.761 0.494" dash="dashed" pen="fat" arrow="normal/normal">
-336 736 m
-48 0 0 -48 288 736 240 736 a
+<path matrix="0.666667 0 0 0.8 53.3333 140.8" stroke="0.604 0.6 0.588" pen="heavier">
+112 624 m
+208 624 l
 </path>
-<path stroke="0.902 0.38 0" dash="dashed" pen="fat" arrow="normal/normal">
-336 736 m
-48 0 0 48 288 736 240 736 a
+<text matrix="1 0 0 1 -4 -6" transformations="translations" pos="192 672" stroke="0.149 0.635 0.412" type="label" width="26.503" height="12.915" depth="4.3" valign="baseline" size="LARGE" style="math">\pi/4</text>
+<path stroke="0.902 0.38 0" dash="dashed" pen="heavier" arrow="normal/normal">
+176 640 m
+48 0 0 -48 128 640 161.941 673.941 a
 </path>
-<text matrix="1 0 0 1 33.4528 79.8163" transformations="translations" pos="192 672" stroke="0.902 0.38 0" type="label" width="10.18" height="7.412" depth="0" valign="baseline" size="LARGE" style="math">\pi</text>
-<text matrix="1 0 0 1 18.4528 47.8163" transformations="translations" pos="192 672" stroke="0.18 0.761 0.494" type="label" width="23.57" height="10.047" depth="1.43" valign="baseline" size="LARGE" style="math">-\pi</text>
-<path matrix="1.66667 0 0 1 -112 0" stroke="0.961 0.761 0.067" pen="fat" rarrow="normal/normal">
-288 736 m
-240 736 l
-</path>
-<text matrix="1 0 0 1 155.273 72.5459" transformations="translations" pos="192 672" stroke="0.961 0.761 0.067" type="label" width="7.895" height="11.097" depth="0" valign="baseline" size="LARGE" style="math">0</text>
+<text matrix="1 0 0 1 -100 26" transformations="translations" pos="192 672" stroke="0.902 0.38 0" type="label" width="47.788" height="12.915" depth="4.3" valign="baseline" size="LARGE" style="math">-7\pi/4</text>
 </page>
 </ipe>
