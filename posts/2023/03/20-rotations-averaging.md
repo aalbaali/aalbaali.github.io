@@ -141,6 +141,7 @@ Define the $\operatorname{Exp}(\theta):\mbb{R}\to S^{1}$ to be
 \end{align}
 and $\operatorname{Log}: S^{1}\to[-\pi,\pi)\subset\mbb{R}$ to be
 \begin{align}
+  \label{eq:Log def}
   \operatorname{Log}(z) \coloneqq \log(z)/\jmath,
 \end{align}
 where $\operatorname{Log}$ is defined to return the angle in the range $[-\pi,\pi)$.
@@ -156,7 +157,7 @@ Now that the rotation parametrization using complex numbers is introduced, we ca
 Before deriving the method to average rotations parametrized using complex numbers, we will first discuss and derive the arithmetic mean, when expand on the arithmetic mean to apply it on rotations.
 
 ## Arithmetic mean derivation
-The arithmetic mean is
+In order to derive the rotation averaging algorithm, it helps to dig deeper into the arithmetic mean equation
 \begin{align}
   \label{eq:mean}
   \bar{x}
@@ -164,7 +165,7 @@ The arithmetic mean is
   \frac{1}{m}\sum_{i=1}^{m} x_{i},
 \end{align}
 which is valid for elements in a vector space $x_{i}\in\mathcal{V}$ (e.g., $\mathcal{V} = \mbb{R}^{n}$).
-To generalize this equation, we'll take a look at how it's derived, and then apply it to rotation averaging.
+Deriving the arithmetic mean will provide the basis for deriving the rotation averaging algorithm.
 
 One way to think about the mean of a set of elements $\mathcal{X}=\{x_{1}, \ldots, x_{m}\}$, where $x_{i}\in \mathcal{V}$, is that it's the number $\bar{x}\in\mathcal{V}$ closest to all the numbers in the set, on average.
 But what does this statement mean mathematically?
@@ -180,6 +181,7 @@ The notion of distance for the Euclidean space $\mbb{R}^{n}$ is defined as
 
 Thus, the distance between the mean $\bar{x}$ and the element $x_{i}$ can be defined as
 \begin{align}
+  \label{eq:arithmetic mean error distance}
   d_{i}(\bar{x}) \coloneqq d(\bar{x}, x_{i}) = \Vert \bar{x} - x_{i} \Vert_{2} \eqqcolon \Vert e_{i}(\bar{x}) \Vert_{2},
 \end{align}
 where
@@ -215,7 +217,7 @@ As such, the objective function \eqref{eq:objective-function-distance} is modifi
   =
   \sum_{i=1}^{m} e_{i}(\bar{x})^{\mathsf{T}}e_{i}(\bar{x}),
 \end{align}
-which in turn changes the optimization problem \eqref{eq:sum-of-distances-newton} to be
+which in turn changes the optimization problem \eqref{eq:argmin-sum-of-distances-newton} to be
 \begin{align}
   \label{eq:argmin-least-squares-newton}
   \bar{x} = \operatorname{arg.\,min}_{x\in\mathcal{V}} \sum_{i=1}^{m} e_{i}(x)^{\mathsf{T}}e_{i}(x).
@@ -257,6 +259,127 @@ For further reading into least squares and optimization, [[3]](#nocedal) is a cl
 The generalization of the linear least squares problem is the [nonlinear least squares](https://en.wikipedia.org/wiki/Non-linear_least_squares), which is used in deriving the rotation-averaging equation in the next section.
 
 ## Averaging rotations using complex numbers
+The rotation averaging algorithm is an on-manifold nonlinear least squares algorithm implemented, where the manifold in this case is the unit circle $S^{1}$.
+The algorithm is very similar to the arithmetic mean equation derived in the previous section, so we'll follow a similar path to derive the rotation averaging algorithm.
+
+As previously discussed, the rotations will be parametrized using complex numbers \eqref{eq:s1-exp-map}.
+And as was done with the arithmetic mean, we need a *distance* metric $\tilde{d}:S^{1}\times S^{1}\to\mbb{R}_{\geq0}$ to measure the distance between two rotations,
+which in this case is given by
+\begin{align}
+  \label{eq:complex distance}
+  \tilde{d}(z_{1}, z_{2}) = \Vert \operatorname{Log}(z_{1}z_{2}^{\ast}) \Vert_{2},
+\end{align}
+where $z^{\ast}$ is the [complex conjugate](https://en.wikipedia.org/wiki/Complex_conjugate), and $\operatorname{Log}$ is defined in \eqref{eq:Log def}.
+
+Similar to the error function introduced in \eqref{eq:arithmetic mean error distance}, the distance between the mean $\bar{z}$ and the $i$th rotation $z_{i}$ is given by
+\begin{align}
+  \tilde{d}_{i}(\bar{z}) \coloneqq \tilde{d}(\bar{z}, z_{i}) \eqqcolon \Vert \tilde{e}_{i}(\bar{z}) \Vert_{2},
+\end{align}
+where
+\begin{align}
+  \label{eq:error function complex}
+  \tilde{e}_{i}(\bar{z}) = \operatorname{Log}(\bar{z}_{i}z_{i}^{\ast})
+\end{align}
+is the *error function* between the mean $\bar{z}$ and the $i$th rotation $z_{i}$.
+
+It important to note that the error function \eqref{eq:error function complex} is smooth in both arguments.
+Without the smoothness of the distance function, it's not possible to use the nonlinear least squares algorithm, which is used in the following steps.
+
+The rotation average is then the solution to the optimization problem
+\begin{align}
+  \label{eq:argmin on complex space}
+  \bar{z} = \operatorname{arg.\,min}_{z\in S^{1}} \sum_{i=1}^{m} \tilde{e}_{i}(z)^{2}.
+\end{align}
+
+The optimization problem \eqref{eq:argmin on complex space} looks nice in theory, but unfortunately, it's not very straightforward to solve.
+As such, we turn to parametrizing the rotations using angles, as was introduced in \eqref{eq:s1-exp-map}.
+Specifically, I will use the notation
+\begin{align}
+  z(\theta) \coloneqq \operatorname{exp}(\jmath\theta).
+\end{align}
+
+Then, the error function \eqref{eq:error function complex} becomes
+\begin{align}
+  \label{eq:argmin on algebra space}
+  e_{i}(\bar{\theta}) = \tilde{e}_{i}(z(\bar{\theta})) = \operatorname{Log}(z(\bar{\theta})z(\theta_{i})^{\ast})
+  = \operatorname{Log}(\operatorname{Exp}(\bar{\theta} - \theta_{i}))
+  = \operatorname{Wrap}(\bar{\theta} - \theta_{i}).
+\end{align}
+
+The optimization problem \eqref{eq:argmin on complex space} becomes
+\begin{align}
+  \label{eq:argmin on algebra space}
+  \bar{\theta} = \operatorname{arg.\,min}_{\theta\in \mbb{R}} \sum_{i=1}^{m} e_{i}(\theta)^{2}.
+\end{align}
+
+The optimization problem \eqref{eq:argmin on algebra space} is a non-convex nonlinear least squares problem, which can be solved using the various methods such as the [Gauss Newton algorithm](https://en.wikipedia.org/wiki/Gauss%E2%80%93Newton_algorithm).
+The Gauss Newton method is a gradient-based optimization method, which means that it requires and uses the error function Jacobian to iterate over the current solution, until convergence.
+As such, the Jacobian of the error function \eqref{eq:argmin on algebra space} is needed.
+
+The Jacobian of the error function \eqref{eq:argmin on algebra space} can be computed by expanding the error function using its Taylor series approximation.
+Let $\bar{\theta}$ be the operating point to linearize about, and let $\theta = \bar{\theta} + \delta\theta$, where $\delta\theta$ is the perturbation.
+Then, the error function can be expressed as
+\begin{align}
+  e_{i}(\theta) 
+    = e_{i}(\bar{\theta} + \delta\theta)
+    = \operatorname{Log}(\operatorname{Exp}(\bar{\theta} + \delta\theta - \theta_{i}))
+    \approx \operatorname{Log}(\operatorname{Exp}(\bar{\theta}-\theta_{i})) + \operatorname{Log}(\operatorname{Exp}(\delta\theta))
+    = e_{i}(\bar{\theta}) + \delta\theta.
+\end{align}
+As such, the Jacobian is
+\begin{align}
+  \mathbf{J}_{i} \coloneqq \frac{\mathrm{d}e_{i}(\theta)}{\mathrm{d}\theta} = 1.
+\end{align}
+
+The error functions can be stacked into a single column vector
+\begin{align}
+  \label{eq:lifted error func}
+  \mbf{e}(\theta) =
+  \begin{bmatrix} e_{1}(\theta) & \cdots & e_{m}\end{bmatrix}^{\mathsf{T}} \in \mbb{R}^{m},
+\end{align}
+and its Jacobian is given by
+\begin{align}
+  \label{eq:lifted error jacobian}
+  \mbf{J} \coloneqq \frac{\mathrm{d}\mbf{e}(\theta)}{\mathrm{d}\theta} = \begin{bmatrix}1 & \cdots & 1\end{bmatrix}^{\mathsf{T}}.
+\end{align}
+The Gauss Newton algorithm is an iterative algorithm given by
+\begin{align}
+  \theta^{k+1} = \theta^{k} + \delta\theta^{k},
+\end{align}
+where $\delta\theta$ is the search direction (also known as the update step), and is given by solving the system of equations
+\begin{align}
+  \label{eq:GN system of equations}
+  \mbf{J}(\theta^{k})^{\mathsf{T}}\mbf{J}(\theta^{k})\delta\theta^{k}
+    = -\mbf{J}(\theta^{k})^{\mathsf{T}}\mbf{e}(\theta^{k}),
+\end{align}.
+
+Inserting the error function \eqref{eq:lifted error func} and the block Jacobian \eqref{eq:lifted error jacobian} into the system of equations \eqref{eq:GN system of equations} and solving for the search direction $\delta\theta^{k}$ gives the solution
+\begin{align}
+  \delta\theta^{k}
+  =
+  -\frac{1}{m}\sum_{i=1}^{m} \operatorname{Log}(\operatorname{Exp}(\theta^{k} - \theta_{i}))
+  =
+  -\frac{1}{m}\sum_{i=1}^{m} \operatorname{Wrap}(\theta^{k} - \theta_{i}).
+\end{align}
+The rotation averaging equation is then
+\begin{align}
+  \label{eq:iterative rotation averaging}
+  \theta^{k+1} = \theta^{k} - \frac{1}{m}\sum_{i=1}^{m} \operatorname{Wrap}(\theta^{k} - \theta_{i}).
+\end{align}
+
+Given that the rotation averaging equation \eqref{eq:iterative rotation averaging} is an iterative equation, it needs to be *initialized* using a starting guess $\theta^{0}$.
+Due to the nonconvexity of the optimization problem, there may be local minimums that are different from the global minimum.
+As such, the initial value $\theta^{0}$ plays a huge role in determining whether the algorithm converges to a local or a global minimum.
+
+Some examples will be introduced in the next section that shed some light on this issue.
+
+### Examples
+- Show how starting with different angles result in different answers, which is due to the non-convexity of the problem.
+
+## Summary
+- Why you should care
+- How this can be used
+- Motivation into Lie groups
 
 ## References
 1. \anchor{sola-micro-lie-theory} J. Solà, J. Deray, and D. Atchuthan, “*A micro Lie theory for state estimation in robotics*,” [arXiv:1812.01537](https://arxiv.org/pdf/1812.01537.pdf) [cs], Dec. 2021, Accessed: Mar. 20, 2022.
