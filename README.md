@@ -15,5 +15,5 @@ Note that the files under `html` do not need to be pushed to the remote branch a
 ## Running franklin
 Run the following command from the project root
 ```bash
-julia --project=Project.toml -e 'using Franklin; serve()'
+julia --project=Project.toml -e 'using Pkg; Pkg.instantiate(); using Franklin; serve()'
 ```
