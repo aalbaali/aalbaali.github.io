@@ -23,9 +23,9 @@ uuid = "d1d4a3ce-64b1-5f1a-9ba4-7e7e69966f35"
 version = "0.1.7"
 
 [[deps.BufferedStreams]]
-git-tree-sha1 = "5bcb75a2979e40b29eb250cb26daab67aa8f97f5"
+git-tree-sha1 = "4ae47f9a4b1dc19897d3743ff13685925c5202ec"
 uuid = "e1450e63-4bb3-523b-b2a4-4ffa8c0fd77d"
-version = "1.2.0"
+version = "1.2.1"
 
 [[deps.Cascadia]]
 deps = ["AbstractTrees", "Gumbo"]
@@ -59,9 +59,9 @@ version = "0.12.10"
 
 [[deps.Compat]]
 deps = ["Dates", "LinearAlgebra", "UUIDs"]
-git-tree-sha1 = "5ce999a19f4ca23ea484e92a1774a61b8ca4cf8e"
+git-tree-sha1 = "e460f044ca8b99be31d35fe54fc33a5c33dd8ed7"
 uuid = "34da2185-b29b-5c13-b0c7-acf172513d20"
-version = "4.8.0"
+version = "4.9.0"
 
 [[deps.CompilerSupportLibraries_jll]]
 deps = ["Artifacts", "Libdl"]
@@ -103,9 +103,9 @@ version = "1.6.1"
 
 [[deps.DataStructures]]
 deps = ["Compat", "InteractiveUtils", "OrderedCollections"]
-git-tree-sha1 = "cf25ccb972fec4e4817764d01c82386ae94f77b4"
+git-tree-sha1 = "3dbd312d370723b6bb43ba9d02fc36abade4518d"
 uuid = "864edb3b-99cc-5e75-8d2d-829cb0a9cfe8"
-version = "0.18.14"
+version = "0.18.15"
 
 [[deps.DataValueInterfaces]]
 git-tree-sha1 = "bfc1187b79289637fa0ef6d4436ebdfe6905cbd6"
@@ -162,11 +162,11 @@ version = "0.8.4"
 
 [[deps.Franklin]]
 deps = ["Dates", "DelimitedFiles", "DocStringExtensions", "ExprTools", "FranklinTemplates", "HTTP", "Literate", "LiveServer", "Logging", "Markdown", "NodeJS", "OrderedCollections", "Pkg", "REPL", "Random", "TOML"]
-git-tree-sha1 = "69d0c5d10caf803bf598adb4d9b4aa65bfa4791b"
+git-tree-sha1 = "0d57a8bd07414f2aa45a6382a8f9e6b3e47621d7"
 repo-rev = "master"
 repo-url = "https://github.com/tlienart/Franklin.jl.git"
 uuid = "713c75ef-9fc9-4b05-94a9-213340da978e"
-version = "0.10.88"
+version = "0.10.89"
 
 [[deps.FranklinTemplates]]
 deps = ["LiveServer"]
@@ -266,9 +266,9 @@ version = "0.21.4"
 
 [[deps.JSON3]]
 deps = ["Dates", "Mmap", "Parsers", "PrecompileTools", "StructTypes", "UUIDs"]
-git-tree-sha1 = "5b62d93f2582b09e469b3099d839c2d2ebf5066d"
+git-tree-sha1 = "95220473901735a0f4df9d1ca5b171b568b2daa3"
 uuid = "0f8b85d8-7281-11e9-16c2-39a750bddbf1"
-version = "1.13.1"
+version = "1.13.2"
 
 [[deps.LLVMOpenMP_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg"]
@@ -315,9 +315,9 @@ uuid = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 
 [[deps.Literate]]
 deps = ["Base64", "IOCapture", "JSON", "REPL"]
-git-tree-sha1 = "1c4418beaa6664041e0f9b48f0710f57bff2fcbe"
+git-tree-sha1 = "a1a0d4ff9f785a2184baca7a5c89e664f144143d"
 uuid = "98b081ad-f1c9-55d3-8b20-4c87d4299306"
-version = "2.14.0"
+version = "2.14.1"
 
 [[deps.LiveServer]]
 deps = ["HTTP", "LoggingExtras", "MIMEs", "Pkg", "Sockets", "Test"]
@@ -424,9 +424,9 @@ uuid = "ca575930-c2e3-43a9-ace4-1e988b2c1908"
 
 [[deps.NodeJS]]
 deps = ["Pkg"]
-git-tree-sha1 = "905224bbdd4b555c69bb964514cfa387616f0d3a"
+git-tree-sha1 = "bf1f49fd62754064bc42490a8ddc2aa3694a8e7a"
 uuid = "2bd173c7-0d6d-553b-b6af-13a54713934c"
-version = "1.3.0"
+version = "2.0.0"
 
 [[deps.OpenBLAS_jll]]
 deps = ["Artifacts", "CompilerSupportLibraries_jll", "Libdl"]
@@ -446,9 +446,9 @@ version = "1.4.1"
 
 [[deps.OpenSSL_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl"]
-git-tree-sha1 = "cae3153c7f6cf3f069a853883fd1919a6e5bab5b"
+git-tree-sha1 = "e78db7bd5c26fc5a6911b50a47ee302219157ea8"
 uuid = "458c3c95-2e84-50aa-8efc-19380b2a3a95"
-version = "3.0.9+0"
+version = "3.0.10+0"
 
 [[deps.OrderedCollections]]
 git-tree-sha1 = "2e73fe17cac3c62ad1aebe70d44c963c3cfdc3e3"
@@ -512,9 +512,9 @@ version = "1.96.1"
 
 [[deps.PyPlot]]
 deps = ["Colors", "LaTeXStrings", "PyCall", "Sockets", "Test", "VersionParsing"]
-git-tree-sha1 = "92e7ca803b579b8b817f004e74b205a706d9a974"
+git-tree-sha1 = "9220a9dae0369f431168d60adab635f88aca7857"
 uuid = "d330b81b-6aea-500a-939a-2ce795aea3ee"
-version = "2.11.1"
+version = "2.11.2"
 
 [[deps.REPL]]
 deps = ["InteractiveUtils", "Markdown", "Sockets", "Unicode"]
@@ -652,9 +652,9 @@ uuid = "410a4b4d-49e4-4fbc-ab6d-cb71b17b3775"
 version = "0.1.7"
 
 [[deps.URIs]]
-git-tree-sha1 = "074f993b0ca030848b897beff716d93aca60f06a"
+git-tree-sha1 = "b7a5e99f24892b6824a954199a45e9ffcc1c70f0"
 uuid = "5c2747f8-b7ea-4ff2-ba2e-563bfd36b1d4"
-version = "1.4.2"
+version = "1.5.0"
 
 [[deps.UUIDs]]
 deps = ["Random", "SHA"]
