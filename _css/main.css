@@ -254,9 +254,10 @@ h6:first-child {
   margin-block-start: 0px;
 }
 
+/* Parameters for changing text width */
 .container {
   width: 100vw;
-  max-width: 60em;
+  max-width: 50em;
   /* background: rgba(51, 171, 249, 0.8); */
   padding: 0;
 }
@@ -494,7 +495,7 @@ ol li ol li {
 }
 
 .eqref {
-  color: magenta;
+  color: var(--camb);
 }
 
 .eqref a {
@@ -643,7 +644,7 @@ body>main {
   /* From Pluto */
   font-family: var(--pluto-output-font-family);
   font-weight: var(--pluto-output-font-weight);
-  font-size: var(--pluto-output-font-size);
+  font-size: var(--output-font-size);
   color: var(--pluto-output-color);
 }
 
