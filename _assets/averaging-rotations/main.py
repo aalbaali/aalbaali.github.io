@@ -2,6 +2,12 @@
 """
 This script demonstrates the Gauss-Newton algorithm for computing the mean of a set of angles.
 
+Usage
+-----
+python main.py [--show-plots] [--show-title] [--save-figs]
+
+Author
+------
 Amro Al-Baali
 16-Aug-2023
 """
@@ -49,7 +55,7 @@ def compute_mean(angles, th0):
         thk = thkm1 - 0.1 * np.mean([wrap_angle(thkm1 - angle) for angle in angles])
     return thk
 
-def plot_results(experiment: Experiment, show_title: bool = False):
+def plot_results(experiment: Experiment, show_title: bool = False, save_fig: bool = False):
     """Plots the results of an experiment."""
     print(f"Running experiment {experiment.name}")
     angles = experiment.angles
@@ -60,54 +66,80 @@ def plot_results(experiment: Experiment, show_title: bool = False):
 
     mean = compute_mean(angles, th0)
 
+    # Plot configs
+    col_th0 = '#3584E4'
+    col_mean = '#F5C211'
+    col_angles = '#E66100'
+    line_width = 2.5
+    legend_font_size = 16
+    axis_font_size = 16
+
     # Plot headings
     plt.figure()
-    plt.xlabel('x')
-    plt.ylabel('y')
-
+    plt.xlabel('x', fontsize=axis_font_size)
+    plt.ylabel('y', fontsize=axis_font_size)
+    
     plt.plot(np.cos(thetas), np.sin(thetas), 'k', label='Unit circle')
     head_length = 0.1
     for theta in angles:
         plt.arrow(0, 0, (1 - head_length) * math.cos(theta), (1 - head_length) * math.sin(theta),
-                  head_width=0.05, head_length=head_length, fc='b', ec='b')
+                  head_width=0.05, head_length=head_length, fc='g', ec='g', linewidth=line_width)
     plt.arrow(0, 0, (1 - head_length) * math.cos(th0), (1 - head_length) * math.sin(th0),
-              head_width=0.05, head_length=head_length, fc='r', ec='r',  label='$\\theta^0$', linestyle='--')
+              head_width=0.05, head_length=head_length, fc=col_th0, ec=col_th0,  label='$\\theta^0$', linestyle='--',
+              linewidth=line_width)
     plt.arrow(0, 0, (1 - head_length) * math.cos(mean), (1 - head_length) * math.sin(mean),
-              head_width=0.05, head_length=head_length, fc='g', ec='g', label='$\\bar{\\theta}$', linestyle='-.')
+              head_width=0.05, head_length=head_length, fc=col_mean, ec=col_mean, label='$\\bar{\\theta}$', linestyle='-.',
+                linewidth=line_width)
 
     plt.title(experiment.name if show_title else None)
     plt.axis('equal')
-    plt.legend(loc='upper right')
+    plt.legend(loc='upper right', fontsize=legend_font_size)
+    
+    # Save figure
+    fig_name = f"{experiment.name}".replace(' ', '_').lower()
+    if save_fig:
+      plt.savefig(f"{fig_name}_headings.svg")
 
 
     # Plot objective function vs theta
     plt.figure()
     plt.title(experiment.name if show_title else None)
 
-    plt.plot(thetas, errors)
-    plt.axvline(x=th0, color='r', linestyle='--', label='$\\theta^0$')
-    plt.axvline(x=mean, color='g', linestyle='-.', label='$\\bar{\\theta}$')
+    plt.plot(thetas, errors, linewidth=line_width, color='k')
 
-    plt.legend(loc='upper right')
+    for theta in angles:
+        plt.axvline(x=theta, color=col_angles, linewidth=line_width, linestyle='-')
+
+    plt.axvline(x=th0, color=col_th0, linestyle='--', label='$\\theta^0$', linewidth=0.8 * line_width)
+    plt.axvline(x=mean, color=col_mean, linestyle='-.', label='$\\bar{\\theta}$', linewidth=0.8 * line_width)
+
+    plt.legend(loc='upper right', fontsize=legend_font_size)
     plt.rc('text', usetex=True)
-    plt.xlabel("$\\theta$ [rad]")
-    plt.ylabel("Objective function $J(\\theta)$")
+    plt.xlabel("$\\theta$ [rad]", fontsize=axis_font_size)
+    plt.ylabel("Objective function $J(\\theta)$", fontsize=axis_font_size)
+
+    if save_fig:
+      plt.savefig(f"{fig_name}_objfunc.svg")
 
 
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser()
-    parser.add_argument('--show-title', action='store_true')
+    parser.add_argument('--show-plots', action='store_true', help='Show plots')
+    parser.add_argument('--show-title', action='store_true', help='Show title on plots')
+    parser.add_argument('--save-figs', action='store_true', help='Save figures')
     args = parser.parse_args()
     
     experiments = [
-        Experiment('Local minimum', [np.pi/4, 3 / 4 * np.pi], np.pi / 3),
-        Experiment('Global minimum', [np.pi/4, 3 / 4 * np.pi], -np.pi / 3),
+        Experiment('Local minimum', [np.pi/4, 3 / 4 * np.pi], -np.pi / 3),
+        Experiment('Global minimum', [np.pi/4, 3 / 4 * np.pi], np.pi / 3),
         Experiment('Multiple global minima 1', [0, 2/3 * np.pi, -2/3*np.pi], np.pi / 3 - 0.1),
         Experiment('Multiple global minima 2', [0, 2/3 * np.pi, -2/3*np.pi], np.pi / 3 + 0.1),
+        Experiment('Single global minima', [np.pi, -np.pi], np.pi / 2),
     ]
 
     for experiment in experiments:
-        plot_results(experiment, show_title=args.show_title)
+        plot_results(experiment, show_title=args.show_title, save_fig=args.save_figs)
 
-    plt.show()
+    if args.show_plots:
+      plt.show()

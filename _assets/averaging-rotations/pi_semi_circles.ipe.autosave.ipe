@@ -315,8 +315,8 @@ h
 <layer name="example_1"/>
 <layer name="example_2_1"/>
 <layer name="example_2_2"/>
-<layer name="alpha"/>
-<view layers="example_2_1" active="alpha"/>
+<layer name="example_3"/>
+<view layers="example_3" active="example_3"/>
 <path layer="example_1" matrix="1.6 0 0 1 -172.8 0" stroke="darkgray" pen="heavier">
 288 736 m
 328 736 l
@@ -398,7 +398,7 @@ h
 288 736 m
 240 736 l
 </path>
-<path layer="alpha" matrix="1.6 0 0 1 -172.803 0.000872" stroke="darkgray" pen="heavier">
+<path layer="example_3" matrix="1.6 0 0 1 -172.803 0.000872" stroke="darkgray" pen="heavier">
 288 736 m
 328 736 l
 </path>

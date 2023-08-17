@@ -55,7 +55,7 @@ Hmmm... what's going on here?
 
 The examples above demonstrate how the heading representation (i.e., its *parameterization*) affects the "arithmetic angle average".
 In this article, we'll dig into the reason behind this behaviour and then a solution is presented that solves the "rotation averaging" problem.
-The answer uses the mathematics of [*Lie groups*](https://en.wikipedia.org/wiki/Lie_group), which are special manifolds that are are often used in robotics [[1]](#sola-micro-lie-theory), especially when describing rotations.
+The answer uses the mathematics of [*Lie groups*](https://en.wikipedia.org/wiki/Lie_group), which are special manifolds that are are often used in robotics [^1], especially when describing rotations.
 The subject of Lie groups is somewhat abstract and was difficult to learn when I was first introduced to the subject.
 My attempt in this article is to motivate the usage of Lie groups through the example of rotation averaging.
 I hope you enjoy the journey.
@@ -103,7 +103,7 @@ The complex unit circle
 \end{align}
 is an elegant way to represent headings.
 It addresses the parameterization uniqueness issue previously discussed, where a heading is *uniquely* represented using a *single* complex number $z\in S^{1}$.
-The notation $S^{1}$ is used to denote that it's a *one-dimensional sphere* [[1]](#sola-micro-lie-theory).
+The notation $S^{1}$ is used to denote that it's a *one-dimensional sphere* [^1].
 
 The unit circle $S^{1}$ is not a vector space, which is the same issue presented when using the set ${[-\pi,\pi)}$.
 However, complex numbers can be used to remedy this issue.
@@ -130,7 +130,7 @@ Thus, the logarithm map is instead defined as
 \end{align}
 For example, $\log(1 + 0\jmath) = \jmath 2\pi k$, where $k\in\mbb{Z}$.
 
-The reference [[1]](#sola-micro-lie-theory) has a good introduction to Lie groups including this one with visuals and demonstrative examples.
+The reference [^1] has a good introduction to Lie groups including this one with visuals and demonstrative examples.
 
 ### Simplified mappings
 The mappings $\mbb{R}\to S^{1}$ and $S^{1}\to\mbb{R}$ will be used often, so explicitly defining functions representing these mappings will simplify the notation in this article.
@@ -242,7 +242,7 @@ where
   \end{bmatrix}^{\mathsf{T}} \in \mbb{R}^{mn}.
 \end{align}
 
-The solution to the least squares problem \eqref{eq:argmin-least-squares-newton} [is](https://en.wikipedia.org/wiki/Least_squares#:~:text=Setting%20the%20gradient%20of,%2C%20we%20get%3A) [[2]](#barfoot-state-estimation) 
+The solution to the least squares problem \eqref{eq:argmin-least-squares-newton} [is](https://en.wikipedia.org/wiki/Least_squares#:~:text=Setting%20the%20gradient%20of,%2C%20we%20get%3A) [^2] 
 \begin{align}
   \bar{x}
   =
@@ -254,7 +254,7 @@ The solution to the least squares problem \eqref{eq:argmin-least-squares-newton}
 \end{align}
 which matches \eqref{eq:mean}.
 
-For further reading into least squares and optimization, [[3]](#nocedal) is a classic.
+For further reading into least squares and optimization, [^3] is a classic.
 
 The generalization of the linear least squares problem is the [nonlinear least squares](https://en.wikipedia.org/wiki/Non-linear_least_squares), which is used in deriving the rotation-averaging equation in the next section.
 
@@ -282,7 +282,7 @@ where
 \end{align}
 is the *error function* between the mean $\bar{z}$ and the $i$th rotation $z_{i}$.
 
-It important to note that the error function \eqref{eq:error function complex} is smooth in both arguments.
+It important to note that the error function \eqref{eq:error function complex} is smooth, *near the minimum*, in both arguments.
 Without the smoothness of the distance function, it's not possible to use the nonlinear least squares algorithm, which is used in the following steps.
 
 The rotation average is then the solution to the optimization problem
@@ -374,15 +374,66 @@ As such, the initial value $\theta^{0}$ plays a huge role in determining whether
 Some examples will be introduced in the next section that shed some light on this issue.
 
 ### Examples
-- Show how starting with different angles result in different answers, which is due to the non-convexity of the problem.
+To show the effect of the initial angle $\theta^{0}$ on the final result, three examples will be presented.
 
-## Summary
-- Why you should care
-- How this can be used
-- Motivation into Lie groups
+First, we'll present the example presented at the beginning of the article shown below, where there are two angles being averaged out: $\pi$ and $-\pi$.
+\figenv{Averaging two identical angles.}{/assets/averaging-rotations/headings_example_1.svg}{width:40%;}
+The angles to be averaged are colored in orange, the starting angle is colored in blue, and the computed mean is shown in yellow.
+As seen in the plot above, rotation averaging algorithm returns the true average, $\pi$.
+
+To further understand how the algorithm converges, the objective function plotted against all possible angles is plotted below.
+\figenv{Objective function plot for global minima.}{/assets/averaging-rotations/single_global_minima_objfunc.svg}{width:70%;}
+
+Notice that in the above plot, there's a single minima, which is at $\pi$.
+Don't let the right- and left-sides of the plots confuse you; they refer to the same heading.
+Since there's a single minima for this problem, the algorithm converges to the correct solution regardless from where it starts.
+This is because the Gauss Newton algorithm will try to reach the bottom of the valley in the plot.
+
+The next example demonstrates that this is not always the case.
+Consider the two angles $\pi/4$ and $3\pi/4$.
+Let's explore the first minima by starting the algorithm at $-\pi/3$, then the algorithm converges to $\pi/2$, as shown in the plot below.
+\figenv{Some problems may have multiple minimas.}{/assets/averaging-rotations/headings_example_2_2.svg}{width:40%;}
+This may be surprising, since we're expecting the answer to be $\pi/2$.
+So, what happened?
+
+Taking a look at the objective function plot reveals that there are actually two minimas, and the algorithm converged to the local (but not global) minima.
+\figenv{Converging to a local minima.}{/assets/averaging-rotations/local_minimum_objfunc.svg}{width:70%}
+Thinking more about the problem reveals that it's actually not that surprising that we get the $\pi/2$ answer;
+it's an angle that's between $\pi/4$ and $3\pi/4$, but it's not the angle that minimizes the error the most (i.e., it's not the global minima).
+
+Well, if we start the same optimization problem at an angle, say $-\pi/3$, which is closer to the global optima, then the algorithm converges to the global minima as seen below.
+\figenv{Converging to a global minima.}{/assets/averaging-rotations/global_minimum_objfunc.svg}{width:70%}
+
+Finally, one last example reveals that in fact there may not be a unique solution.
+Consider the angles $0$,  $2\pi/3$, and $-2\pi/3$ as shown below.
+\figenv{Some problems may not have a unique solution.}{/assets/averaging-rotations/headings_example_3.svg}{width:40%;}
+
+The objective function plot reveals that there are multiple global minimas.
+\figenv{Converging to a global minima.}{/assets/averaging-rotations/multiple_global_minima_2_objfunc.svg}{width:70%}
+The algorithm simply converges to the minima closest to the starting condition.
+
+This final example demonstrates that sometimes the solution may depend on the problem structure itself.
+The fact that the algorithm gives *an* answer doesn't mean that it's the *only* answer.
+
+For the reader interested in a numeric example, check the [plotting script](/assets/averaging-rotations/main.py), which uses the algorithm to compute the mean.
+
+## Concluding remarks
+In this post, I used an innocent looking problem to motivate an important field of applied mathematics: optimization on manifold.
+This field is used in multiple robotics' displaces such as state estimation and control.
+
+Don't be scared by the word "manifold" because you've just worked with one: the *unit circle*.
+This unit circle belongs to special class of manifolds known as [*Lie groups*](https://en.wikipedia.org/wiki/Lie_group), which are special manifolds that are also [groups](https://en.wikipedia.org/wiki/Group_(mathematics)).
+Lie groups appear quite frequently in robotic applications, mainly because they represent rotations elegantly, both in 2D and 3D.
+
+For readers interested in Lie groups for robotic applications, then [^1] is a great introduction to the topic.
+For a more rigorous text, refer to [^2].
+
+If you made it this far, then you are a champion!
+I hope you enjoyed this post, and don't hesitate to reach out.
+
 
 ## References
-1. \anchor{sola-micro-lie-theory} J. Solà, J. Deray, and D. Atchuthan, “*A micro Lie theory for state estimation in robotics*,” [arXiv:1812.01537](https://arxiv.org/pdf/1812.01537.pdf) [cs], Dec. 2021, Accessed: Mar. 20, 2022.
-2. \anchor{barfoot-state-estimation} T. D. Barfoot, State Estimation for Robotics. Cambridge, MA, USA: 774 Cambridge Univ. Press, 2017. 
-3. \anchor{nocedal} J. Nocedal and S. J. Wright, Numerical optimization, 2nd ed. in Springer series in operations research. New York: Springer, 2006.
+[^1]: \anchor{sola-micro-lie-theory} J. Solà, J. Deray, and D. Atchuthan, “*A micro Lie theory for state estimation in robotics*,” [arXiv:1812.01537](https://arxiv.org/pdf/1812.01537.pdf) [cs], Dec. 2021, Accessed: Mar. 20, 2022.
+[^2]: \anchor{barfoot-state-estimation} T. D. Barfoot, State Estimation for Robotics. Cambridge, MA, USA: 774 Cambridge Univ. Press, 2017. 
+[^3]: \anchor{nocedal} J. Nocedal and S. J. Wright, Numerical optimization, 2nd ed. in Springer series in operations research. New York: Springer, 2006.
 
