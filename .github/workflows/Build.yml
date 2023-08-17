@@ -31,7 +31,7 @@ jobs:
       # Get changed files. The changed files will be used to inspect what Pluto
       # notebooks changed so they're built to HTML. Store the files into a space separated varaible
       - id: files
-        uses: jitterbit/get-changed-files@v1
+        uses: masesgroup/retrieve-changed-files@v2
         env:
           CHANGED_FILES: steps.files.outputs.all
 
