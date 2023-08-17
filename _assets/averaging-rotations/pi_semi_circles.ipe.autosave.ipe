@@ -316,7 +316,7 @@ h
 <layer name="example_2_1"/>
 <layer name="example_2_2"/>
 <layer name="example_3"/>
-<view layers="example_3" active="example_3"/>
+<view layers="example_1" active="example_1"/>
 <path layer="example_1" matrix="1.6 0 0 1 -172.8 0" stroke="darkgray" pen="heavier">
 288 736 m
 328 736 l
@@ -325,7 +325,7 @@ h
 288 736 m
 240 736 l
 </path>
-<path stroke="0.18 0.761 0.494" dash="dashed" pen="fat" arrow="normal/normal">
+<path stroke="0.902 0.38 0" dash="dashed" pen="fat" arrow="normal/normal">
 336 736 m
 48 0 0 -48 288 736 240 736 a
 </path>
@@ -334,7 +334,7 @@ h
 48 0 0 48 288 736 240 736 a
 </path>
 <text matrix="1 0 0 1 33.4528 79.8163" transformations="translations" pos="192 672" stroke="0.902 0.38 0" type="label" width="10.18" height="7.412" depth="0" valign="baseline" size="LARGE" style="math">\pi</text>
-<text matrix="1 0 0 1 18.4528 47.8163" transformations="translations" pos="192 672" stroke="0.18 0.761 0.494" type="label" width="23.57" height="10.047" depth="1.43" valign="baseline" size="LARGE" style="math">-\pi</text>
+<text matrix="1 0 0 1 18.4528 47.8163" transformations="translations" pos="192 672" stroke="0.902 0.38 0" type="label" width="23.57" height="10.047" depth="1.43" valign="baseline" size="LARGE" style="math">-\pi</text>
 <path layer="example_2_1" matrix="1.6 0 0 1 -172.8 0" stroke="darkgray" pen="heavier">
 288 736 m
 328 736 l
@@ -390,7 +390,7 @@ h
 288 736 m
 240 736 l
 </path>
-<path matrix="1.65606 0 0 1 -189.967 0" stroke="0.18 0.761 0.494" dash="dashed" pen="fat" arrow="normal/normal">
+<path matrix="1.65606 0 0 1 -189.967 0" stroke="0.902 0.38 0" dash="dashed" pen="fat" arrow="normal/normal">
 288 736 m
 240 736 l
 </path>

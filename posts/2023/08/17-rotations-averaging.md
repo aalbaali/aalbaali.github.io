@@ -55,7 +55,7 @@ Hmmm... what's going on here?
 
 The examples above demonstrate how the heading representation (i.e., its *parameterization*) affects the "arithmetic angle average".
 In this article, we'll dig into the reason behind this behaviour and then a solution is presented that solves the "rotation averaging" problem.
-The answer uses the mathematics of [*Lie groups*](https://en.wikipedia.org/wiki/Lie_group), which are special manifolds that are are often used in robotics [^1], especially when describing rotations.
+The answer uses the mathematics of [*Lie groups*](https://en.wikipedia.org/wiki/Lie_group), which are special manifolds that are often used in robotics [^1], especially when describing rotations.
 The subject of Lie groups is somewhat abstract and was difficult to learn when I was first introduced to the subject.
 My attempt in this article is to motivate the usage of Lie groups through the example of rotation averaging.
 I hope you enjoy the journey.
@@ -106,7 +106,7 @@ It addresses the parameterization uniqueness issue previously discussed, where a
 The notation $S^{1}$ is used to denote that it's a *one-dimensional sphere* [^1].
 
 The unit circle $S^{1}$ is not a vector space, which is the same issue presented when using the set ${[-\pi,\pi)}$.
-However, complex numbers can be used to remedy this issue.
+However, complex numbers tools can be used to remedy this issue.
 A point $z\in S^{1}$ on the unit circle can be parameterized by
 \begin{align}
   \label{eq:s1-exp-map}
@@ -130,8 +130,6 @@ Thus, the logarithm map is instead defined as
 \end{align}
 For example, $\log(1 + 0\jmath) = \jmath 2\pi k$, where $k\in\mbb{Z}$.
 
-The reference [^1] has a good introduction to Lie groups including this one with visuals and demonstrative examples.
-
 ### Simplified mappings
 The mappings $\mbb{R}\to S^{1}$ and $S^{1}\to\mbb{R}$ will be used often, so explicitly defining functions representing these mappings will simplify the notation in this article.
 
@@ -146,7 +144,7 @@ and $\operatorname{Log}: S^{1}\to[-\pi,\pi)\subset\mbb{R}$ to be
 \end{align}
 where $\operatorname{Log}$ is defined to return the angle in the range $[-\pi,\pi)$.
 
-Another useful operation is the angle-wrapping operator $\operatorname{Wrap}: \mbb{R}\to[-\pi,\pi)$, which is a mapping taking any valid angle and wrapping it to the range $[-\pi, \pi)$.
+Another useful operation is the angle-wrapping operator $\operatorname{Wrap}: \mbb{R}\to[-\pi,\pi)$, which is a mapping that takes any valid angle and wraps it to the range $[-\pi, \pi)$.
 For example, $\operatorname{Wrap}(3\pi) = \pi$.
 Mathematically, the angle-wrap function can be defined as
 \begin{align}
@@ -154,7 +152,7 @@ Mathematically, the angle-wrap function can be defined as
 \end{align}
 
 Now that the rotation parametrization using complex numbers is introduced, we can continue the rotation-averaging discussion.
-Before deriving the method to average rotations parametrized using complex numbers, we will first discuss and derive the arithmetic mean, when expand on the arithmetic mean to apply it on rotations.
+But before deriving the rotation averaging algorithm, we will first discuss and derive the arithmetic mean, then expand on the arithmetic mean to apply it on rotations.
 
 ## Arithmetic mean derivation
 In order to derive the rotation averaging algorithm, it helps to dig deeper into the arithmetic mean equation
@@ -189,7 +187,7 @@ where
   \label{eq:linear-error-function}
   e_{i}(\bar{x}) \coloneqq \bar{x} - x_{i}
 \end{align}
-is referred to as the *error function* because it's measuring the difference between the mean $\bar{x}$ (i.e., the target variable) and the $n$-th element $x_{i}$.
+is referred to as the *error function* because it's measuring the difference between the mean $\bar{x}$ (i.e., the target variable) and the $i$th element $x_{i}$.
 
 The mean $\bar{x}\in\mathcal{V}$ is then the element that minimizes the *total* distance given by
 \begin{align}
@@ -208,7 +206,7 @@ which can be written mathematically as
 where $\operatorname{arg.\,min}$ is read as the "argument of the minimum".
 
 Since \eqref{eq:linear-error-function} is an error function, then \eqref{eq:argmin-sum-of-distances-newton} is a (linear) [*least squares problem*](https://en.wikipedia.org/wiki/Least_squares).
-Without going into details, squaring the summands in \eqref{eq:argmin-sum-of-distances-newton} makes the optimization problem convex, which has strong mathematical guarantees.
+Without going into details, squaring the summands in \eqref{eq:argmin-sum-of-distances-newton} simplifies the problem.
 As such, the objective function \eqref{eq:objective-function-distance} is modified to be
 \begin{align}
   J(\bar{x})
@@ -254,7 +252,7 @@ The solution to the least squares problem \eqref{eq:argmin-least-squares-newton}
 \end{align}
 which matches \eqref{eq:mean}.
 
-For further reading into least squares and optimization, [^3] is a classic.
+For further reading into least squares and optimization, [^3] is a classic optimization book.
 
 The generalization of the linear least squares problem is the [nonlinear least squares](https://en.wikipedia.org/wiki/Non-linear_least_squares), which is used in deriving the rotation-averaging equation in the next section.
 
@@ -283,7 +281,7 @@ where
 is the *error function* between the mean $\bar{z}$ and the $i$th rotation $z_{i}$.
 
 It important to note that the error function \eqref{eq:error function complex} is smooth, *near the minimum*, in both arguments.
-Without the smoothness of the distance function, it's not possible to use the nonlinear least squares algorithm, which is used in the following steps.
+Without the smoothness of the error function, it's not possible to use the nonlinear least squares algorithm, which is used in the following steps.
 
 The rotation average is then the solution to the optimization problem
 \begin{align}
@@ -291,11 +289,11 @@ The rotation average is then the solution to the optimization problem
   \bar{z} = \operatorname{arg.\,min}_{z\in S^{1}} \sum_{i=1}^{m} \tilde{e}_{i}(z)^{2}.
 \end{align}
 
-The optimization problem \eqref{eq:argmin on complex space} looks nice in theory, but unfortunately, it's not very straightforward to solve.
+The optimization problem \eqref{eq:argmin on complex space} looks nice in theory, but unfortunately, it's not very straightforward to solve using complex numbers.
 As such, we turn to parametrizing the rotations using angles, as was introduced in \eqref{eq:s1-exp-map}.
 Specifically, I will use the notation
 \begin{align}
-  z(\theta) \coloneqq \operatorname{exp}(\jmath\theta).
+  z(\theta) \coloneqq \operatorname{Exp}(\theta).
 \end{align}
 
 Then, the error function \eqref{eq:error function complex} becomes
@@ -346,12 +344,12 @@ The Gauss Newton algorithm is an iterative algorithm given by
 \begin{align}
   \theta^{k+1} = \theta^{k} + \delta\theta^{k},
 \end{align}
-where $\delta\theta$ is the search direction (also known as the update step), and is given by solving the system of equations
+where $\delta\theta^{k}$ is the search direction (also known as the update step), and is given by solving the system of equations
 \begin{align}
   \label{eq:GN system of equations}
   \mbf{J}(\theta^{k})^{\mathsf{T}}\mbf{J}(\theta^{k})\delta\theta^{k}
-    = -\mbf{J}(\theta^{k})^{\mathsf{T}}\mbf{e}(\theta^{k}),
-\end{align}.
+    = -\mbf{J}(\theta^{k})^{\mathsf{T}}\mbf{e}(\theta^{k}).
+\end{align}
 
 Inserting the error function \eqref{eq:lifted error func} and the block Jacobian \eqref{eq:lifted error jacobian} into the system of equations \eqref{eq:GN system of equations} and solving for the search direction $\delta\theta^{k}$ gives the solution
 \begin{align}
@@ -379,7 +377,7 @@ To show the effect of the initial angle $\theta^{0}$ on the final result, three 
 First, we'll present the example presented at the beginning of the article shown below, where there are two angles being averaged out: $\pi$ and $-\pi$.
 \figenv{Averaging two identical angles.}{/assets/averaging-rotations/headings_example_1.svg}{width:40%;}
 The angles to be averaged are colored in orange, the starting angle is colored in blue, and the computed mean is shown in yellow.
-As seen in the plot above, rotation averaging algorithm returns the true average, $\pi$.
+As seen in the plot above, the rotation averaging algorithm returns the true average, $\pi$.
 
 To further understand how the algorithm converges, the objective function plotted against all possible angles is plotted below.
 \figenv{Objective function plot for global minima.}{/assets/averaging-rotations/single_global_minima_objfunc.svg}{width:70%;}
@@ -399,38 +397,40 @@ So, what happened?
 Taking a look at the objective function plot reveals that there are actually two minimas, and the algorithm converged to the local (but not global) minima.
 \figenv{Converging to a local minima.}{/assets/averaging-rotations/local_minimum_objfunc.svg}{width:70%}
 Thinking more about the problem reveals that it's actually not that surprising that we get the $\pi/2$ answer;
-it's an angle that's between $\pi/4$ and $3\pi/4$, but it's not the angle that minimizes the error the most (i.e., it's not the global minima).
+it's an angle that's the same distance from both $\pi/4$ and $3\pi/4$, but it's not the angle with the *shortest* distance (i.e., it's not the global minima).
 
-Well, if we start the same optimization problem at an angle, say $-\pi/3$, which is closer to the global optima, then the algorithm converges to the global minima as seen below.
+Well, if we start the same optimization problem at an angle that is closer to the global optima, say $\pi/3$, then the algorithm converges to the global minima as seen below.
 \figenv{Converging to a global minima.}{/assets/averaging-rotations/global_minimum_objfunc.svg}{width:70%}
 
 Finally, one last example reveals that in fact there may not be a unique solution.
 Consider the angles $0$,  $2\pi/3$, and $-2\pi/3$ as shown below.
 \figenv{Some problems may not have a unique solution.}{/assets/averaging-rotations/headings_example_3.svg}{width:40%;}
 
-The objective function plot reveals that there are multiple global minimas.
+Our intuition tells us that there's no "right" answer for the average of these angles.
+That is, there's no single angle that is equally close to all the angles in the plot.
+This is better explained by looking at the objective function plot, which reveals that there are multiple global minimas.
 \figenv{Converging to a global minima.}{/assets/averaging-rotations/multiple_global_minima_2_objfunc.svg}{width:70%}
-The algorithm simply converges to the minima closest to the starting condition.
+The rotation averaging algorithm simply converges to the minima closest to the starting condition.
+But it would have also converged to a different angle if the algorithm was initialized closer to the other angle.
 
-This final example demonstrates that sometimes the solution may depend on the problem structure itself.
-The fact that the algorithm gives *an* answer doesn't mean that it's the *only* answer.
+This final example demonstrates that sometimes the solution may depend on the problem structure itself, which give some insight into the algorithm:
+the fact that the algorithm gives *an* answer doesn't mean that it's the *only*, or even the *right*, answer.
 
 For the reader interested in a numeric example, check the [plotting script](/assets/averaging-rotations/main.py), which uses the algorithm to compute the mean.
 
 ## Concluding remarks
 In this post, I used an innocent looking problem to motivate an important field of applied mathematics: optimization on manifold.
-This field is used in multiple robotics' displaces such as state estimation and control.
+This field is used in multiple robotics' disciplines such as state estimation, control, and computer vision.
 
 Don't be scared by the word "manifold" because you've just worked with one: the *unit circle*.
 This unit circle belongs to special class of manifolds known as [*Lie groups*](https://en.wikipedia.org/wiki/Lie_group), which are special manifolds that are also [groups](https://en.wikipedia.org/wiki/Group_(mathematics)).
 Lie groups appear quite frequently in robotic applications, mainly because they represent rotations elegantly, both in 2D and 3D.
 
-For readers interested in Lie groups for robotic applications, then [^1] is a great introduction to the topic.
-For a more rigorous text, refer to [^2].
+For readers interested in Lie groups for robotic applications, then [^1] is a great introduction to the topic and for a more rigorous text, refer to [^2].
 
 If you made it this far, then you are a champion!
-I hope you enjoyed this post, and don't hesitate to reach out.
-
+I hope you enjoyed this post and found something useful out of it.
+Don't hesitate to reach out.
 
 ## References
 [^1]: \anchor{sola-micro-lie-theory} J. Solà, J. Deray, and D. Atchuthan, “*A micro Lie theory for state estimation in robotics*,” [arXiv:1812.01537](https://arxiv.org/pdf/1812.01537.pdf) [cs], Dec. 2021, Accessed: Mar. 20, 2022.
