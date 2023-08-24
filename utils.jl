@@ -194,7 +194,7 @@ function get_post_years(dir = "posts")
 end
 
 """
-HTML function used in the `Posts` page to list all avilable posts. That is, it lists posts stored
+HTML function used in the `Posts` page to list all available posts. That is, it lists posts stored
 under `_posts`.
 
 Returns an HTML string
@@ -204,6 +204,7 @@ function hfun_posts()
 
     # Get an array of the years inside the `posts` directory
     years = get_post_years()
+    sort!(years, rev = true)
     for year in years
         ys = "$year"
         isdir(joinpath("posts", ys)) || continue
