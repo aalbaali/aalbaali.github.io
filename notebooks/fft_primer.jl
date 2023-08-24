@@ -645,9 +645,9 @@ version = "1.0.0"
 
 [[deps.JLLWrappers]]
 deps = ["Artifacts", "Preferences"]
-git-tree-sha1 = "a7e91ef94114d5bc8952bcaa8d6ff952cf709808"
+git-tree-sha1 = "7e5d6779a1e09a36db2a7b6cff50942a0a7d0fca"
 uuid = "692b3bcd-3c85-4b1f-b108-f13ce0eb3210"
-version = "1.4.2"
+version = "1.5.0"
 
 [[deps.JSON]]
 deps = ["Dates", "Mmap", "Parsers", "Unicode"]
@@ -779,9 +779,9 @@ uuid = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
 
 [[deps.LogExpFunctions]]
 deps = ["ChainRulesCore", "ChangesOfVariables", "DocStringExtensions", "InverseFunctions", "IrrationalConstants", "LinearAlgebra"]
-git-tree-sha1 = "c3ce8e7420b3a6e071e0fe4745f5d4300e37b13f"
+git-tree-sha1 = "7d6dd4e9212aebaeed356de34ccf262a3cd415aa"
 uuid = "2ab3a3ac-af41-5b50-aa03-7779005ae688"
-version = "0.3.24"
+version = "0.3.26"
 
 [[deps.Logging]]
 uuid = "56ddb016-857b-54e1-b83d-db4d58db5568"
@@ -799,9 +799,9 @@ version = "2022.2.0+0"
 
 [[deps.MacroTools]]
 deps = ["Markdown", "Random"]
-git-tree-sha1 = "42324d08725e200c23d4dfb549e0d5d89dede2d2"
+git-tree-sha1 = "9ee1618cbf5240e6d4e0371d6f24065083f60c48"
 uuid = "1914dd2f-81c6-5fcd-8719-6d5c9610ff09"
-version = "0.5.10"
+version = "0.5.11"
 
 [[deps.Markdown]]
 deps = ["Base64"]
@@ -926,9 +926,9 @@ version = "0.7.52"
 
 [[deps.PrecompileTools]]
 deps = ["Preferences"]
-git-tree-sha1 = "9673d39decc5feece56ef3940e5dafba15ba0f81"
+git-tree-sha1 = "03b4c25b43cb84cee5c90aa9b5ea0a78fd848d2f"
 uuid = "aea7be01-6a6a-4083-8856-8a6e6704d82a"
-version = "1.1.2"
+version = "1.2.0"
 
 [[deps.Preferences]]
 deps = ["TOML"]
