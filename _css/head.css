@@ -11,7 +11,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --oxb: rgba(13, 202, 240, 0.8);
-    --camb: #0dcaf0;
+    --camb: rgba(33, 68, 120, 1);
     --link: rgba(81, 204, 229, 1);
     --banana: #FFE135;
     --lgray: #D3D3D3;
