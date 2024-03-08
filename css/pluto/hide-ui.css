@@ -1,1 +1,15 @@
-@charset "utf-8";main{margin-top:20px;cursor:auto}body header#pluto-nav,preamble>button,pluto-cell>button,pluto-input>button,pluto-shoulder,pluto-runarea,#helpbox-wrapper{display:none !important}
+main {
+    margin-top: 20px;
+    cursor: auto;
+}
+
+body header#pluto-nav,
+preamble > button,
+pluto-cell > button,
+pluto-input > button,
+pluto-shoulder,
+/* footer, */
+pluto-runarea,
+#helpbox-wrapper {
+    display: none !important;
+}
