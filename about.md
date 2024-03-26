@@ -12,19 +12,6 @@ I am robotics software engineer mainly interested in perception, navigation, loc
 My background is in optimization, state estimation, and SLAM and I have interest in programming applied mathematical algorithms that use optimization, probability, control theory, and numerical methods.
 I hope to share some of my passion with the world in this blog.
 
-If you are a recruiter that's interested in my resume, then here it is.
-~~~
-<!-- button 3 -->
-<center>
-<a
-  href="/resume/"
-  class="btn btn-lg btn-secondary fw-bold border-camb bg-oxb text-camb mx-2"
->
-Resume
-</a>
-</center>
-~~~
-
 # About this blog
 In a nutshell, this blog is an experiment of sharing my notes and thoughts.
 I will sometimes use it to as a more thorough `README.md` for software projects that I work on.
