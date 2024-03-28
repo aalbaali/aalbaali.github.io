@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70218" creator="Ipe 7.2.27">
-<info created="D:20230527154451" modified="D:20230527154451"/>
+<info created="D:20230527154451" modified="D:20240327200023"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -569,52 +569,62 @@ h
 </preamble>
 </ipestyle>
 <page>
-<layer name="alpha"/>
-<view layers="alpha" active="alpha"/>
-<path layer="alpha" matrix="1 0 0 1 64 0" stroke="navy" pen="fat" arrow="normal/normal">
+<layer name="frame_a"/>
+<layer name="frame_b"/>
+<layer name="transform"/>
+<view layers="frame_a frame_b" active="frame_b"/>
+<path layer="frame_a" matrix="1 0 0 1 48 -16" stroke="0.11 0.443 0.847" pen="fat" arrow="normal/normal">
 128 576 m
 192 576 l
 </path>
-<path matrix="1 0 0 1 64 0" stroke="navy" pen="fat" arrow="normal/normal">
+<path matrix="1 0 0 1 48 -16" stroke="0.11 0.443 0.847" pen="fat" arrow="normal/normal">
 128 576 m
 128 640 l
 </path>
-<text matrix="1 0 0 1 49.999 -3.652" transformations="translations" pos="112 560" stroke="black" type="label" width="28.934" height="16.936" depth="3.72" valign="baseline" size="Huge" style="math">\mathcal{F}_{a}</text>
-<use matrix="1 0 0 1 0 64" name="mark/disk(sx)" pos="192 512" size="large" stroke="darkblue"/>
-<use matrix="1 0 0 1 0 64" name="mark/disk(sx)" pos="192 512" size="large" stroke="darkblue"/>
-<text matrix="1 0 0 1 129.999 92.348" transformations="translations" pos="112 560" stroke="black" type="label" width="12.181" height="10.672" depth="4.82" valign="baseline" size="Huge" style="math">p</text>
-<use matrix="1 0 0 1 64 128" name="mark/disk(sx)" pos="192 512" size="large" stroke="darkblue"/>
-<path matrix="0.5 0 0 1 96 64" stroke="darkgreen" pen="fat" arrow="normal/normal">
+<text matrix="1 0 0 1 33.999 -19.652" transformations="translations" pos="112 560" stroke="0.11 0.443 0.847" type="label" width="28.934" height="16.936" depth="3.72" valign="baseline" size="Huge" style="math">\mathcal{F}_{a}</text>
+<use matrix="1 0 0 1 0 64" name="mark/disk(sx)" pos="192 512" size="large" stroke="0.961 0.761 0.067"/>
+<use matrix="1 0 0 1 0 64" name="mark/disk(sx)" pos="192 512" size="large" stroke="0.961 0.761 0.067"/>
+<text matrix="1 0 0 1 129.999 92.348" transformations="translations" pos="112 560" stroke="0.961 0.761 0.067" type="label" width="12.181" height="10.672" depth="4.82" valign="baseline" size="Huge" style="math">p</text>
+<use matrix="1 0 0 1 64 128" name="mark/disk(sx)" pos="192 512" size="large" stroke="0.961 0.761 0.067"/>
+<path matrix="0.5 0 0 1 96 64" stroke="0.18 0.761 0.494" pen="fat" arrow="normal/normal">
 192 512 m
 320 576 l
 </path>
-<text matrix="1 0 0 1 9.9126 107.13" transformations="translations" pos="112 560" stroke="darkgreen" type="label" width="124.138" height="23.34" depth="6.18" valign="baseline" size="Huge" style="math">\mathbf{r}^{pa}_{a}=[1 \,\; 1]^\mathsf{T}</text>
-<text matrix="1 0 0 1 217.913 89.1305" transformations="translations" pos="112 560" stroke="1 0.549 0" type="label" valign="baseline" size="Huge" style="math">\mathbf{r}^{pb}_{b}=[0 \,\; \sqrt{2}]^{\mathsf{T}}</text>
-<path matrix="0.707107 0.707107 -0.707107 0.707107 636.784 78.1968" stroke="navy" pen="fat" arrow="normal/normal">
+<path layer="frame_b" matrix="0.707107 0.707107 -0.707107 0.707107 636.784 62.1968" stroke="0.749 0.251 0.251" pen="fat" arrow="normal/normal">
 128 576 m
 192 576 l
 </path>
-<path matrix="0.707107 0.707107 -0.707107 0.707107 636.784 78.1968" stroke="navy" pen="fat" arrow="normal/normal">
+<path matrix="0.707107 0.707107 -0.707107 0.707107 636.784 62.1968" stroke="0.749 0.251 0.251" pen="fat" arrow="normal/normal">
 128 576 m
 128 640 l
 </path>
-<text matrix="1 0 0 1 177.999 -3.652" transformations="translations" pos="112 560" stroke="black" type="label" width="26.916" height="16.939" depth="5.81" valign="baseline" size="Huge" style="math">\mathcal{F}_{b}</text>
-<use matrix="1 0 0 1 128 64" name="mark/disk(sx)" pos="192 512" size="large" stroke="darkblue"/>
-<use matrix="1 0 0 1 128 64" name="mark/disk(sx)" pos="192 512" size="large" stroke="darkblue"/>
-<path stroke="darkorange" pen="fat" arrow="normal/normal">
+<text matrix="1 0 0 1 177.999 -19.652" transformations="translations" pos="112 560" stroke="0.749 0.251 0.251" type="label" width="26.916" height="16.939" depth="5.81" valign="baseline" size="Huge" style="math">\mathcal{F}_{b}</text>
+<use matrix="1 0 0 1 128 64" name="mark/disk(sx)" pos="192 512" size="large" stroke="0.961 0.761 0.067"/>
+<use matrix="1 0 0 1 128 64" name="mark/disk(sx)" pos="192 512" size="large" stroke="0.961 0.761 0.067"/>
+<path stroke="0.753 0.749 0.737" pen="fat" arrow="normal/normal">
 320 576 m
 256 640 l
 </path>
-<text matrix="1 0 0 1 233.913 -38.8695" transformations="translations" pos="112 560" stroke="brown" type="label" width="179.222" height="58.197" depth="45.91" valign="baseline" size="Huge" style="math">\mbf{T}^{ba}_{ab}
+<text layer="transform" matrix="1 0 0 1 233.913 -54.8695" transformations="translations" pos="112 560" stroke="brown" type="label" width="191.452" height="58.197" depth="45.91" valign="baseline" size="Huge" style="math">\mbf{T}^{zw}_{ab}
 =
 \begin{bmatrix}
-\mbf{C}_{ab} &amp; \mbf{r}^{ba}_{a} \\
+\mbf{C}_{ab} &amp; \mbf{r}^{zw}_{a} \\
 \mbf{0} &amp; 1
 \end{bmatrix}</text>
-<path stroke="brown" pen="fat" arrow="normal/normal">
+<path matrix="1 0 0 1 -16 -16" stroke="brown" pen="fat" arrow="normal/normal">
 192 544 m
 256 528
 304 544 c
 </path>
+<text layer="frame_a" matrix="1 0 0 1 65.999 28.348" transformations="translations" pos="112 560" stroke="0.961 0.761 0.067" type="label" width="18.016" height="10.672" depth="0" valign="baseline" size="Huge" style="math">w</text>
+<text layer="frame_b" matrix="1 0 0 1 209.999 28.348" transformations="translations" pos="112 560" stroke="0.961 0.761 0.067" type="label" width="12.379" height="10.672" depth="0" valign="baseline" size="Huge" style="math">z</text>
+<text layer="frame_a" matrix="1 0 0 1 9.913 107.13" transformations="translations" pos="112 560" stroke="0.18 0.761 0.494" type="label" width="23.367" height="11.014" depth="6.13" valign="baseline" size="Huge" style="math">\mathbf{r}^{\;\;}_{\;}</text>
+<text matrix="1 0 0 1 20.913 112.13" transformations="translations" pos="112 560" stroke="0.961 0.761 0.067" type="label" width="25.671" height="17.891" depth="0" valign="baseline" size="Huge" style="math">{}^{pw}</text>
+<text matrix="1 0 0 1 21.913 104.169" transformations="translations" pos="112 560" stroke="0.11 0.443 0.847" type="label" width="11.119" height="5.176" depth="3.72" valign="baseline" size="Huge" style="math">{}_{a}</text>
+<text matrix="1 0 0 1 41.913 105.38" transformations="translations" pos="112 560" stroke="0.18 0.761 0.494" type="label" width="84.59" height="23.34" depth="6.18" valign="baseline" size="Huge" style="math">=[1 \,\; 1]^{\mathsf{T}}</text>
+<text layer="frame_b" matrix="1 0 0 1 185.913 107.13" transformations="translations" pos="112 560" stroke="0.753 0.749 0.737" type="label" width="23.367" height="11.014" depth="6.13" valign="baseline" size="Huge" style="math">\mathbf{r}^{\;\;}_{\;}</text>
+<text matrix="1 0 0 1 196.913 112.13" transformations="translations" pos="112 560" stroke="0.961 0.761 0.067" type="label" width="20.972" height="17.891" depth="0" valign="baseline" size="Huge" style="math">{}^{pz}</text>
+<text matrix="1 0 0 1 197.913 104.169" transformations="translations" pos="112 560" stroke="0.749 0.251 0.251" type="label" width="9.1" height="8.539" depth="5.81" valign="baseline" size="Huge" style="math">{}_{b}</text>
+<text matrix="1 0 0 1 217.913 105.38" transformations="translations" pos="112 560" stroke="0.753 0.749 0.737" type="label" width="105.246" height="23.34" depth="6.18" valign="baseline" size="Huge" style="math">=[1 \,\; \sqrt{2}]^{\mathsf{T}}</text>
 </page>
 </ipe>

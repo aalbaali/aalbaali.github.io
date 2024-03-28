@@ -37,25 +37,25 @@
 </symbol>
 </g>
 </defs>
-<g id="surface10134">
-<path style=" stroke:none;fill-rule:evenodd;fill:rgb(0%,0%,54.5%);fill-opacity:1;" d="M 35 89 C 35 85 29 85 29 89 C 29 93 35 93 35 89 Z M 35 89 "/>
-<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<g id="surface26842">
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(96.1%,76.1%,6.7%);fill-opacity:1;" d="M 35 89 C 35 85 29 85 29 89 C 29 93 35 93 35 89 Z M 35 89 "/>
+<g style="fill:rgb(96.1%,76.1%,6.7%);fill-opacity:1;">
   <use xlink:href="#glyph0-1" x="1.999" y="92.652"/>
 </g>
-<g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
+<g style="fill:rgb(96.1%,76.1%,6.7%);fill-opacity:1;">
   <use xlink:href="#glyph0-2" x="145.999" y="12.652"/>
 </g>
-<path style=" stroke:none;fill-rule:evenodd;fill:rgb(0%,0%,54.5%);fill-opacity:1;" d="M 163 25 C 163 21 157 21 157 25 C 157 29 163 29 163 25 Z M 163 25 "/>
-<path style="fill:none;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:round;stroke:rgb(0%,39.2%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 192 512 L 320 576 " transform="matrix(1,0,0,-1,-160,601)"/>
-<path style="fill-rule:evenodd;fill:rgb(0%,39.2%,0%);fill-opacity:1;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:round;stroke:rgb(0%,39.2%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 320 576 L 312.695312 574.953125 L 314.78125 570.785156 Z M 320 576 " transform="matrix(1,0,0,-1,-160,601)"/>
-<g style="fill:rgb(0%,39.2%,0%);fill-opacity:1;">
+<path style=" stroke:none;fill-rule:evenodd;fill:rgb(96.1%,76.1%,6.7%);fill-opacity:1;" d="M 163 25 C 163 21 157 21 157 25 C 157 29 163 29 163 25 Z M 163 25 "/>
+<path style="fill:none;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:round;stroke:rgb(18%,76.1%,49.4%);stroke-opacity:1;stroke-miterlimit:10;" d="M 192 512 L 320 576 " transform="matrix(1,0,0,-1,-160,601)"/>
+<path style="fill-rule:evenodd;fill:rgb(18%,76.1%,49.4%);fill-opacity:1;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:round;stroke:rgb(18%,76.1%,49.4%);stroke-opacity:1;stroke-miterlimit:10;" d="M 320 576 L 312.695312 574.953125 L 314.78125 570.785156 Z M 320 576 " transform="matrix(1,0,0,-1,-160,601)"/>
+<g style="fill:rgb(18%,76.1%,49.4%);fill-opacity:1;">
   <use xlink:href="#glyph1-1" x="56.587" y="28.666"/>
 </g>
-<g style="fill:rgb(0%,39.2%,0%);fill-opacity:1;">
+<g style="fill:rgb(18%,76.1%,49.4%);fill-opacity:1;">
   <use xlink:href="#glyph2-1" x="49.999" y="39.702"/>
   <use xlink:href="#glyph2-2" x="49.974213" y="39.702"/>
 </g>
-<g style="fill:rgb(0%,39.2%,0%);fill-opacity:1;">
+<g style="fill:rgb(18%,76.1%,49.4%);fill-opacity:1;">
   <use xlink:href="#glyph3-1" x="74.786" y="19.671"/>
   <use xlink:href="#glyph3-2" x="84.931287" y="19.671"/>
 </g>
