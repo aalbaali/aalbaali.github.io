@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70218" creator="Ipe 7.2.27">
-<info created="D:20230527144914" modified="D:20230528130145"/>
+<info created="D:20230527144914" modified="D:20240327194304"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -570,6 +570,7 @@ h
 </ipestyle>
 <page>
 <layer name="alpha"/>
+<layer name="arrow"/>
 <layer name="vector"/>
 <layer name="frame_a"/>
 <layer name="frame_a'"/>
@@ -577,7 +578,7 @@ h
 <layer name="beta"/>
 <layer name="gamma"/>
 <layer name="robot"/>
-<view layers="frame_a" active="frame_a'"/>
+<view layers="arrow frame_a frame_b" active="frame_a"/>
 <path layer="alpha" stroke="navy" pen="fat" arrow="normal/normal">
 128 576 m
 192 576 l
@@ -635,51 +636,35 @@ h
 <text matrix="1 0 0 1 161.925 6.69607" transformations="translations" pos="112 560" stroke="1 0.647 0" type="label" width="39.22" height="17.005" depth="3.72" valign="baseline" size="Huge" style="math">\mathbf{T}_{ca}</text>
 <text matrix="1 0 0 1 266.019 116.269" transformations="translations" pos="112 560" stroke="1 0.647 0" type="label" width="64.626" height="17.001" depth="12.13" valign="baseline" size="Huge" style="math">\mathbf{T}_{bc/cb}</text>
 <text matrix="1 0 0 1 143.054 -42.0031" transformations="translations" pos="112 560" stroke="seagreen" type="label" width="39.22" height="17.005" depth="3.72" valign="baseline" size="Huge" style="math">\mathbf{T}_{ac}</text>
-<path layer="frame_a" matrix="1 0 0 1 0 -128" stroke="navy" pen="fat" arrow="normal/normal">
+<path layer="frame_a" matrix="1 0 0 1 0 -128" stroke="0.11 0.443 0.847" pen="fat" arrow="normal/normal">
 128 576 m
 192 576 l
 </path>
-<path matrix="1 0 0 1 0 -128" stroke="navy" pen="fat" arrow="normal/normal">
+<path matrix="1 0 0 1 0 -128" stroke="0.11 0.443 0.847" pen="fat" arrow="normal/normal">
 128 576 m
 128 640 l
 </path>
-<text matrix="1 0 0 1 -14.001 -131.652" transformations="translations" pos="112 560" stroke="black" type="label" width="28.934" height="16.936" depth="3.72" valign="baseline" size="Huge" style="math">\mathcal{F}_{a}</text>
-<use layer="vector" name="mark/disk(sx)" pos="192 512" size="large" stroke="darkblue"/>
-<text matrix="1 0 0 1 49.999 -51.652" transformations="translations" pos="112 560" stroke="black" type="label" width="18.016" height="10.672" depth="0" valign="baseline" size="Huge" style="math">w</text>
-<text matrix="1 0 0 1 193.999 28.348" transformations="translations" pos="112 560" stroke="black" type="label" width="12.181" height="10.672" depth="4.82" valign="baseline" size="Huge" style="math">p</text>
-<use matrix="1 0 0 1 128 64" name="mark/disk(sx)" pos="192 512" size="large" stroke="darkblue"/>
-<path stroke="darkgreen" pen="fat" arrow="normal/normal">
+<text matrix="1 0 0 1 -14.001 -131.652" transformations="translations" pos="112 560" stroke="0.11 0.443 0.847" type="label" width="28.934" height="16.936" depth="3.72" valign="baseline" size="Huge" style="math">\mathcal{F}_{a}</text>
+<use layer="arrow" name="mark/disk(sx)" pos="192 512" size="large" stroke="0.961 0.761 0.067"/>
+<text matrix="1 0 0 1 49.999 -51.652" transformations="translations" pos="112 560" stroke="0.961 0.761 0.067" type="label" width="18.016" height="10.672" depth="0" valign="baseline" size="Huge" style="math">w</text>
+<text matrix="1 0 0 1 193.999 28.348" transformations="translations" pos="112 560" stroke="0.961 0.761 0.067" type="label" width="12.181" height="10.672" depth="4.82" valign="baseline" size="Huge" style="math">p</text>
+<use matrix="1 0 0 1 128 64" name="mark/disk(sx)" pos="192 512" size="large" stroke="0.961 0.761 0.067"/>
+<path stroke="0.18 0.761 0.494" pen="fat" arrow="normal/normal">
 192 512 m
 320 576 l
 </path>
-<text matrix="1 0 0 1 97.999 12.348" transformations="translations" pos="112 560" stroke="darkgreen" type="label" width="50.458" height="17.878" depth="11.05" valign="baseline" size="Huge" style="math">\underrightarrow{r}^{pw}</text>
-<use layer="frame_a" name="mark/disk(sx)" pos="192 512" size="large" stroke="darkblue"/>
-<text matrix="1 0 0 1 49.999 -51.652" transformations="translations" pos="112 560" stroke="black" type="label" width="18.016" height="10.672" depth="0" valign="baseline" size="Huge" style="math">w</text>
-<text matrix="1 0 0 1 193.999 28.348" transformations="translations" pos="112 560" stroke="black" type="label" width="12.181" height="10.672" depth="4.82" valign="baseline" size="Huge" style="math">p</text>
-<use matrix="1 0 0 1 128 64" name="mark/disk(sx)" pos="192 512" size="large" stroke="darkblue"/>
-<path stroke="darkgreen" pen="fat" arrow="normal/normal">
-192 512 m
-320 576 l
-</path>
-<text matrix="1 0 0 1 25.9126 -4.8695" transformations="translations" pos="112 560" stroke="darkgreen" type="label" width="114.801" height="21.448" depth="6.18" valign="baseline" size="Huge" style="math">\mathbf{r}^{pw}_{a}=[2 \,\; 1]</text>
-<use layer="frame_b" name="mark/disk(sx)" pos="192 512" size="large" stroke="darkblue"/>
-<text matrix="1 0 0 1 49.999 -51.652" transformations="translations" pos="112 560" stroke="black" type="label" width="18.016" height="10.672" depth="0" valign="baseline" size="Huge" style="math">w</text>
-<text matrix="1 0 0 1 193.999 28.348" transformations="translations" pos="112 560" stroke="black" type="label" width="12.181" height="10.672" depth="4.82" valign="baseline" size="Huge" style="math">p</text>
-<use matrix="1 0 0 1 128 64" name="mark/disk(sx)" pos="192 512" size="large" stroke="darkblue"/>
-<path stroke="darkgreen" pen="fat" arrow="normal/normal">
-192 512 m
-320 576 l
-</path>
-<text matrix="1 0 0 1 137.913 -52.8695" transformations="translations" pos="112 560" stroke="darkgreen" type="label" width="135.457" height="22.486" depth="9.78" valign="baseline" size="Huge" style="math">\mathbf{r}^{pw}_{b}=[\sqrt{5} \,\; 0]</text>
-<path matrix="0.894427 0.447214 -0.447214 0.894427 399.108 -124.434" stroke="navy" pen="fat" arrow="normal/normal">
+<text layer="vector" matrix="1 0 0 1 97.999 12.348" transformations="translations" pos="112 560" stroke="0.18 0.761 0.494" type="label" width="50.458" height="17.878" depth="11.05" valign="baseline" size="Huge" style="math">\underrightarrow{r}^{pw}</text>
+<text layer="frame_a" matrix="1 0 0 1 25.9126 -4.8695" transformations="translations" pos="112 560" stroke="0.18 0.761 0.494" type="label" width="23.367" height="11.014" depth="6.13" valign="baseline" size="Huge" style="math">\mathbf{r}^{\;\;}_{\;}</text>
+<text layer="frame_b" matrix="1 0 0 1 137.913 -52.8695" transformations="translations" pos="112 560" stroke="0.18 0.761 0.494" type="label" width="135.457" height="22.486" depth="9.78" valign="baseline" size="Huge" style="math">\mathbf{r}^{pw}_{b}=[\sqrt{5} \,\; 0]</text>
+<path matrix="0.894427 0.447214 -0.447214 0.894427 399.108 -124.434" stroke="0.153 0.58 0.519" pen="fat" arrow="normal/normal">
 128 576 m
 192 576 l
 </path>
-<path matrix="0.894427 0.447214 -0.447214 0.894427 399.108 -124.433" stroke="navy" pen="fat" arrow="normal/normal">
+<path matrix="0.894427 0.447214 -0.447214 0.894427 399.108 -124.433" stroke="0.153 0.58 0.519" pen="fat" arrow="normal/normal">
 128 576 m
 128 640 l
 </path>
-<text matrix="1 0 0 1 119.627 -130.74" transformations="translations" pos="112 560" stroke="black" type="label" width="26.916" height="16.939" depth="5.81" valign="baseline" size="Huge" style="math">\mathcal{F}_{b}</text>
+<text matrix="1 0 0 1 119.627 -130.74" transformations="translations" pos="112 560" stroke="0.153 0.58 0.519" type="label" width="26.916" height="16.939" depth="5.81" valign="baseline" size="Huge" style="math">\mathcal{F}_{b}</text>
 <path layer="beta" matrix="1 0 0 1 0 -128" stroke="navy" pen="fat" arrow="normal/normal">
 128 576 m
 192 576 l
@@ -698,92 +683,98 @@ h
 128 640 l
 </path>
 <text matrix="1 0 0 1 119.627 -130.74" transformations="translations" pos="112 560" stroke="black" type="label" width="26.916" height="16.939" depth="5.81" valign="baseline" size="Huge" style="math">\mathcal{F}_{b}</text>
-<path layer="robot" matrix="1 0 0 1.25 64 -144" stroke="darkgreen" pen="fat">
+<path layer="robot" matrix="1 0 0 1.25 64 -144" stroke="0.18 0.761 0.494" pen="fat">
 128 640 m
 128 576 l
 256 576 l
 256 640 l
 h
 </path>
-<path matrix="1 0 0 1 0 16" stroke="darkgreen" pen="fat">
+<path matrix="1 0 0 1 0 16" stroke="0.18 0.761 0.494" pen="fat">
 176 656 m
 176 640 l
 208 640 l
 208 656 l
 h
 </path>
-<path stroke="darkgreen" pen="fat">
+<path stroke="0.18 0.761 0.494" pen="fat">
 176 576 m
 176 560 l
 208 560 l
 208 576 l
 h
 </path>
-<path matrix="1 0 0 1 96 0" stroke="darkgreen" pen="fat">
+<path matrix="1 0 0 1 96 0" stroke="0.18 0.761 0.494" pen="fat">
 176 576 m
 176 560 l
 208 560 l
 208 576 l
 h
 </path>
-<path matrix="1 0 0 1 96 96" stroke="darkgreen" pen="fat">
+<path matrix="1 0 0 1 96 96" stroke="0.18 0.761 0.494" pen="fat">
 176 576 m
 176 560 l
 208 560 l
 208 576 l
 h
 </path>
-<path matrix="0.5 0 0 1 128 32" stroke="navy" pen="fat" arrow="normal/normal">
+<path matrix="0.5 0 0 1 128 32" stroke="0.11 0.443 0.847" pen="fat" arrow="normal/normal">
 128 576 m
 192 576 l
 </path>
-<path matrix="1 0 0 0.5 64 320" stroke="navy" pen="fat" arrow="normal/normal">
+<path matrix="1 0 0 0.5 64 320" stroke="0.11 0.443 0.847" pen="fat" arrow="normal/normal">
 128 576 m
 128 640 l
 </path>
-<text matrix="1 0 0 1 57.3411 34.184" transformations="translations" pos="112 560" stroke="black" type="label" width="28.48" height="11.766" depth="2.58" valign="baseline" size="LARGE" style="math">\mathcal{F}_{\mathrm{car}}</text>
-<path matrix="0.5 0 0 1 256 80" stroke="navy" pen="fat" arrow="normal/normal">
+<text matrix="1 0 0 1 38.3411 34.184" transformations="translations" pos="112 560" stroke="0.11 0.443 0.847" type="label" width="40.511" height="11.766" depth="2.58" valign="baseline" size="LARGE" style="math">\mathcal{F}_{\mathrm{robot}}</text>
+<path matrix="0.353553 0.353553 -0.707107 0.707107 682.039 203.452" stroke="0.11 0.443 0.847" pen="fat" arrow="normal/normal">
 128 576 m
 192 576 l
 </path>
-<path matrix="1 0 0 0.5 192 368" stroke="navy" pen="fat" arrow="normal/normal">
+<path matrix="0.707107 0.707107 -0.353553 0.353553 433.137 361.844" stroke="0.11 0.443 0.847" pen="fat" arrow="normal/normal">
 128 576 m
 128 640 l
 </path>
-<text matrix="1 0 0 1 133.394 120.203" transformations="translations" pos="112 560" stroke="black" type="label" width="70.295" height="11.762" depth="3.58" valign="baseline" size="LARGE" style="math">\mathcal{F}_{\mathrm{front-lidar}}</text>
-<path matrix="0.5 0 0 1 208 32" stroke="navy" pen="fat" arrow="normal/normal">
+<text matrix="1 0 0 1 165.394 123.203" transformations="translations" pos="112 560" stroke="0.11 0.443 0.847" type="label" width="36.284" height="11.766" depth="2.58" valign="baseline" size="LARGE" style="math">\mathcal{F}_{\mathrm{lidar}}</text>
+<path matrix="0.5 0 0 1 208 32" stroke="0.11 0.443 0.847" pen="fat" arrow="normal/normal">
 128 576 m
 192 576 l
 </path>
-<path matrix="1 0 0 0.5 144 320" stroke="navy" pen="fat" arrow="normal/normal">
+<path matrix="1 0 0 0.5 144 320" stroke="0.11 0.443 0.847" pen="fat" arrow="normal/normal">
 128 576 m
 128 640 l
 </path>
-<text matrix="1 0 0 1 137.341 34.184" transformations="translations" pos="112 560" stroke="black" type="label" width="36.596" height="11.766" depth="2.58" valign="baseline" size="LARGE" style="math">\mathcal{F}_{\mathrm{IMU}}</text>
-<path matrix="0.5 0 0 1 256 0" stroke="navy" pen="fat" arrow="normal/normal">
+<text matrix="1 0 0 1 137.341 34.184" transformations="translations" pos="112 560" stroke="0.11 0.443 0.847" type="label" width="36.596" height="11.766" depth="2.58" valign="baseline" size="LARGE" style="math">\mathcal{F}_{\mathrm{IMU}}</text>
+<path matrix="0.353553 -0.353553 0.707107 0.707107 -132.548 213.961" stroke="0.11 0.443 0.847" pen="fat" arrow="normal/normal">
 128 576 m
 192 576 l
 </path>
-<path matrix="1 0 0 0.5 192 288" stroke="navy" pen="fat" arrow="normal/normal">
+<path matrix="0.707107 -0.707107 0.353553 0.353553 25.8436 462.863" stroke="0.11 0.443 0.847" pen="fat" arrow="normal/normal">
 128 576 m
 128 640 l
 </path>
-<text matrix="1 0 0 1 199.645 -2.70957" transformations="translations" pos="112 560" stroke="black" type="label" width="49.29" height="11.766" depth="2.58" valign="baseline" size="LARGE" style="math">\mathcal{F}_{\mathrm{camera}}</text>
+<text matrix="1 0 0 1 199.645 -12.7096" transformations="translations" pos="112 560" stroke="0.11 0.443 0.847" type="label" width="49.29" height="11.766" depth="2.58" valign="baseline" size="LARGE" style="math">\mathcal{F}_{\mathrm{camera}}</text>
 <path layer="frame_b" stroke="darkorange" pen="fat" arrow="normal/normal">
 128 416 m
 192 400
 240 416 c
 </path>
 <text matrix="1 0 0 1 53.1915 -173.869" transformations="translations" pos="112 560" stroke="1 0.549 0" type="label" width="37.617" height="17.079" depth="5.81" valign="baseline" size="Huge" style="math">\mbf{C}_{ab}</text>
-<path layer="frame_a'" matrix="1 0 0 1 256 -128" stroke="navy" pen="fat" arrow="normal/normal">
+<path layer="frame_a'" matrix="1 0 0 1 256 -128" stroke="0.11 0.443 0.847" pen="fat" arrow="normal/normal">
 128 576 m
 192 576 l
 </path>
-<path matrix="1 0 0 1 256 -128" stroke="navy" pen="fat" arrow="normal/normal">
+<path matrix="1 0 0 1 256 -128" stroke="0.11 0.443 0.847" pen="fat" arrow="normal/normal">
 128 576 m
 128 640 l
 </path>
-<text matrix="1 0 0 1 241.999 -131.652" transformations="translations" pos="112 560" stroke="black" type="label" width="34.167" height="16.933" depth="7" valign="baseline" size="Huge" style="math">\mathcal{F}_{a&apos;}</text>
-<text matrix="1 0 0 1 -38.0874 -4.8695" transformations="translations" pos="112 560" stroke="darkgreen" type="label" width="61.788" height="21.443" depth="10.97" valign="baseline" size="Huge" style="math">\mathbf{r}^{pw}_{a&apos;}=</text>
+<text matrix="1 0 0 1 241.999 -131.652" transformations="translations" pos="112 560" stroke="0.11 0.443 0.847" type="label" width="34.167" height="16.933" depth="7" valign="baseline" size="Huge" style="math">\mathcal{F}_{a&apos;}</text>
+<text matrix="1 0 0 1 -28.0874 -4.8695" transformations="translations" pos="112 560" stroke="0.18 0.761 0.494" type="label" width="24.281" height="11.014" depth="6.13" valign="baseline" size="Huge" style="math">\mathbf{r}^{~~}_{~}</text>
+<text layer="frame_a" matrix="1 0 0 1 36.9126 0.1305" transformations="translations" pos="112 560" stroke="0.961 0.761 0.067" type="label" width="25.671" height="17.891" depth="0" valign="baseline" size="Huge" style="math">{}^{pw}</text>
+<text matrix="1 0 0 1 37.9126 -7.831" transformations="translations" pos="112 560" stroke="0.11 0.443 0.847" type="label" width="11.119" height="5.176" depth="3.72" valign="baseline" size="Huge" style="math">{}_{a}</text>
+<text layer="frame_a'" matrix="1 0 0 1 -15.0874 0.1305" transformations="translations" pos="112 560" stroke="0.961 0.761 0.067" type="label" width="25.671" height="17.891" depth="0" valign="baseline" size="Huge" style="math">{}^{pw}</text>
+<text matrix="1 0 0 1 -17.0874 -7.8695" transformations="translations" pos="112 560" stroke="0.11 0.443 0.847" type="label" width="16.351" height="8.533" depth="7" valign="baseline" size="Huge" style="math">{}_{a&apos;}</text>
+<text layer="frame_a" matrix="1 0 0 1 57.9126 -6.6195" transformations="translations" pos="112 560" stroke="0.18 0.761 0.494" type="label" width="70.856" height="18.564" depth="6.18" valign="baseline" size="Huge" style="math">=[2 \,\; 1]</text>
+<text layer="frame_a'" matrix="1 0 0 1 3.9126 -6.8345" transformations="translations" pos="112 560" stroke="0.18 0.761 0.494" type="label" width="17.843" height="8.814" depth="0" valign="baseline" size="Huge" style="math">=</text>
 </page>
 </ipe>

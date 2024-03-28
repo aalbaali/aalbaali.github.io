@@ -24,14 +24,14 @@ tags = ["Kinematics", "Lie groups"]
 
 # Motivation
 Say you want to design a localization system for a ground robot equipped with wheel encoders, an IMU, and a Lidar.
-The goal of the navigation system is to estimate the robot's [pose](https://en.wikipedia.org/wiki/Pose_(computer_vision)#:~:text=In%20computer%20vision%2C%20the%20pose,and%20orientation%20in%20the%20environment.) (i.e., position and orientation) resolved in the *world* frame (i.e., as seen by an observer in the world looking at the robot).
+The goal of the navigation system is to estimate the robot's [pose](https://en.wikipedia.org/wiki/Pose_(computer_vision)#:~:text=In%20computer%20vision%2C%20the%20pose,and%20orientation%20in%20the%20environment.) (i.e., displacement and orientation) resolved in the *world* frame (i.e., as seen by an observer in the world looking at the robot).
 To do that, the navigation system would need to resolve the sensor measurements (e.g., lidar measurements) in the *robot* frame.
 In other words, the system should *transform* the measurements from the sensor frame to the robot frame.
 This requires using transformations, which can be parametrized as transformation matrices, which in turn are a relation between two coordinate systems.
 
 \figenv{A robot equipped with multiple sensors.}{/assets/frames-and-transforms/robot_frames.svg}{width:30%;}
 
-This blog serves as a very lightweight intro to the notion of reference frames and transformations that link frames and positions together.
+This blog serves as a very lightweight intro to the notion of reference frames and transformations that link frames and displacements together.
 
 # Reference frames
 I've been talking about reference frames and transforms without giving them a proper introduction.
@@ -40,8 +40,8 @@ Refer to [^1][^2] for more info on frames and transforms.
 
 A reference frame, denoted $\mathcal{F}$, is a set of orthogonal physical unit vectors.
 The frame can be attached to a rigid body such that it rotates with the rigid body.
-However, the reference frame does *not* have a notion of "position", which could be a confusing concept, especially that the frames are often drawn with an "origin".
-What's usually meant to be communicated is "the position of some point $a$ with respect to another point $b$, resolved in frame $\mathcal{F}_{a}$".
+However, the reference frame does *not* have a notion of "position" or "displacement", which could be a confusing concept, especially that it's common to refer to a frame's "origin" (e.g., [ROS' tf library](https://wiki.ros.org/tf/Tutorials)).
+What's usually meant to be communicated is "the displacement of some point $a$ with respect to another point $b$, resolved in frame $\mathcal{F}_{a}$".
 
 For example, the vector from point $w$ to point $p$ is represented using a *physical vector* $\underrightarrow{r}^{pw}$.
 \figenv{Physical vector in the physical space.}{/assets/frames-and-transforms/frames_physical_vector.svg}{width:30%;}
@@ -89,14 +89,14 @@ However, sometimes we're interested in more than just resolving the vector in a 
 Specifically, we're sometimes interested in having the displacement be with respect to *another* point, resolved in a *different* frame.
 
 For example, say we have the coordinates $\mathbf{r}^{pw}_{a}$.
-\figenv{}{/assets/frames-and-transforms/transform_frame_a.svg}{width:20%;}
+\figenv{}{/assets/frames-and-transforms/transform_frame_a.svg}{width:30%;}
 
 Furthermore, say we're interested in having the coordinates of $\mathbf{r}^{pz}_{b}$.
-That is, the displacement of the point $p$ with respect to point $z$, resolved in frame $\mathcal{F}_{b}$ (i.e., the orange arrow in the image blow).
-\figenv{}{/assets/frames-and-transforms/transform_frame_b.svg}{width:45%;}
+That is, the displacement of the point $p$ with respect to point $z$, resolved in frame $\mathcal{F}_{b}$ (i.e., the green arrow in the gray blow).
+\figenv{}{/assets/frames-and-transforms/transform_frame_b.svg}{width:55%;}
 Then, what is the relation between $\mathbf{r}^{pw}_{a}$ and $\mathbf{r}^{pz}_{b}$?
 
-Well, this be relatively simple:
+The relationship is given by
 $$
 \mathbf{r}^{pw}_{a}
 =
@@ -125,6 +125,8 @@ $$
 \end{bmatrix},
 $$
 where $\mathbf{T}^{zw}_{ab}$ is known as a [transformation matrix](https://en.wikipedia.org/wiki/Transformation_matrix), and $\begin{bmatrix}\mathbf{r} & 1\end{bmatrix}^{\mathsf{T}}$ is known as a [homogenous coordinate](https://en.wikipedia.org/wiki/Homogeneous_coordinates).
+The notation is summarized in the following figure.
+\figenv{}{/assets/frames-and-transforms/transform_matrix.svg}{width:75%;}
 
 
 # Applications
@@ -144,23 +146,19 @@ Transformations are an important part of any robotic system with multiple frames
 This blog lacks the depth for deep understanding of these concepts.
 As such, I've provided some references for further readings for the interested readers.
 
-In the next blog, I'll be presenting a data structure that holds transformations among different frames.
-So, stay tuned!
-
-## Further readings
+# Further readings
 The rotation matrices and transformation matrices fall under a special mathematical structure known as a [matrix Lie group](https://en.wikipedia.org/wiki/Lie_group).
 Specifically, the rotation matrices fall under the [special orthogonal group](https://en.wikipedia.org/wiki/Lie_group), whereas the transformation matrices fall under the [special Euclidean group](https://en.wikipedia.org/wiki/Euclidean_group).
 A very good introduction to Lie groups for robotics is presented by Sola[^4].
 
-For a more thorough and a more solid intro to reference frames, Lie groups, and robotics in general, Barfoot's book is quite something[^5].
+For a more thorough and a more solid intro to reference frames, Lie groups, and robotics in general, Barfoot's book is quite something[^3].
 
 
 # References
 
 [^1]: [Representing Robot Pose: The good, the bad, and the ugly](http://paulfurgale.info/news/2014/6/9/representing-robot-pose-the-good-the-bad-and-the-ugly)
 [^2]: [Reducing the uncertainty about the uncertainties, part 2: Frames and manifolds](https://gtsam.org/2021/02/23/uncertainties-part2.html)
-[^3]: [Direction Cosine Matrix](https://www.sciencedirect.com/topics/engineering/direction-cosine-matrix)
+[^3]: [State Estimation for Robotics](http://asrl.utias.utoronto.ca/~tdb/bib/barfoot_ser17.pdf)
 [^4]: [A micro Lie theory for state estimation in robotics](https://arxiv.org/abs/1812.01537)
-[^5]: [State Estimation for Robotics](http://asrl.utias.utoronto.ca/~tdb/bib/barfoot_ser17.pdf)
 
 
