@@ -32,10 +32,6 @@ Happy reading!
 
 &nbsp;
 
-<a href="https://twitter.com/AmroAlBaali" title="twitter">{{svg_twitter}}</a>
-
-&nbsp;
-
 <a href="https://github.com/aalbaali" title="github">{{svg_github}}</a>
 ~~~
 @@
