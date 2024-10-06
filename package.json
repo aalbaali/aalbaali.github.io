@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "highlight.js": "^11.9.0",
-    "purgecss": "^5.0.0"
+    "highlight.js": "^11.10.0",
+    "purgecss": "^6.0.0"
   }
 }
